@@ -10,7 +10,7 @@ namespace App\Entities;
 class Post extends Entity {
 
 
-
+    protected $table = 'posts';
 
 
 }

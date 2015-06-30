@@ -2,6 +2,8 @@
 
 class Profile extends Entity {
 
+    //table
+    protected $table = 'profiles';
 
 
 	// Relaciones

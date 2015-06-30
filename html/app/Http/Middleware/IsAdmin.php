@@ -19,7 +19,7 @@ class IsAdmin {
         $roles = $acciones['roles'];
 
         if (!in_array($this->auth->user()->id_profile, $roles))
-          //  return response('Unauthorized.', 401);
+        //  return response('Unauthorized.', 401);
         return redirect()->intended('auth/login');
     else
         //return redirect()->back()->withErrors('El usuario no existe o la contraseña es incorrecta.');
