@@ -1,4 +1,5 @@
-<?php namespace App\Entities;
+<?php
+namespace App\Entities;
 
 class Profile extends Entity {
 
@@ -11,5 +12,13 @@ class Profile extends Entity {
     {
         return $this->hasMany(User::getClass());
     }
+
+
+    public function roles()
+    {
+        return $this->belongsToMany(Roles::getClass());
+    }
+
+
 
 }

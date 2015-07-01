@@ -1,15 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-use Symfony\Component\HttpKernel\Tests\Controller;
+use App\Http\Repositories\ProfileRepo;
+use App\Http\Repositories\RoleRepo;
 
-/**
- * Created by PhpStorm.
- * User: llrocha
- * Date: 30/06/2015
- * Time: 09:40 AM
- */
 class ProfilesController extends Controller {
+
+    protected $profileRepo;
+
+    public function __construct(ProfileRepo $profileRepo)
+    {
+        //$this->middleware('auth');
+        $this->profileRepo = $profileRepo;
+    }
+
+
+    public function index()
+    {
+        $profiles = $this->profileRepo->ListProfile();
+        //dd($profiles);
+        return view('profile.index' ,compact('profiles'));
+    }
+
+
 
 
 

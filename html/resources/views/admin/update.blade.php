@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-xs-12 col-lg-4">
-                            <img class="img-circle" src="{{ $user->imageUrl }}">
+
                         </div>
 
                         <div class="col-xs-12 col-lg-8">

@@ -5,21 +5,21 @@
 	<div class="jumbotron">
 		<div class="row">
 		  <div class="col-md-3">
-		  <img src="{{ $user->imageUrl }}" width="140" height="140" class="img-circle">
+
 		 
 		  </div>
 		  <div class="col-md-9">
 			<address>
 			  <strong>Full Name</strong><br>
-			   {{ $user->firstName }}<br>
-			   {{ $user->lastName }}
+			   {{ $user->first_name }}<br>
+			   {{ $user->last_name }}
 			   
 			</address>
 
 			<address>
 			  <strong>Twitter, Inc.</strong><br>
-	  		  {{ $user->country }} - {{ $user->state }}<br>
-	  		  {{ $user->phoneNumber }}<br>
+
+	  		  {{ $user->phone_number }}<br>
 			</address>
 
 			<address>

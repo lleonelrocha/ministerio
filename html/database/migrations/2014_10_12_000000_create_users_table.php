@@ -15,18 +15,19 @@ class CreateUsersTable extends Migration {
 		Schema::create('users', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('firstName');
-			$table->string('lastName');
+			$table->string('first_name');
+			$table->string('last_name');
 			
 			$table->string('email')->unique();
 			$table->string('password', 60);
 
-			$table->string('phoneNumber');
+			$table->string('phone_number');
 			$table->string('country');
-			$table->string('state');
-			$table->string('imageUrl',255);
-            $table->integer('id_profile')->unsigned();
-            $table->foreign('id_profile')
+
+
+            $table->integer('profile_id');
+
+            $table->foreign('profile_id')
                 ->references('id')->on('profiles')
                 ->onDelete('cascade');
 

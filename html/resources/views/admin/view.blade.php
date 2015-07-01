@@ -15,9 +15,8 @@
                                   <legend>Datos de {{ $user->fullname }}</legend>
                                   <address>
 
-                                      <strong>Telefono</strong>: {{ $user->phoneNumber }}<br>
-                                      <strong>Pais</strong>: {{ $user->country }}<br>
-                                      <strong>Provincia</strong>: {{ $user->state }}
+                                      <strong>Telefono</strong>: {{ $user->phone_number }}<br>
+
                                   </address>
 
                                   <address>

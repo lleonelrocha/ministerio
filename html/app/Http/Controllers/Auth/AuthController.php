@@ -13,6 +13,7 @@ class AuthController extends Controller {
 
     public function authenticate(Request $request)
     {
+
         if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')]))
             return redirect()->intended('home');
         else
@@ -22,7 +23,6 @@ class AuthController extends Controller {
     public function logout()
     {
         Auth::logout();
-
         return redirect()->route('auth.login');
     }
 

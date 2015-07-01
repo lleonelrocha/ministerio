@@ -48,11 +48,9 @@
                     @foreach($users as $user)
                         <tr>
                             <td>{{ $user->id }}       </td>
-                            <td>{{ $user->firstName }}</td>
-                            <td>{{ $user->lastName }} </td>
-                            <td>{{ $user->country }} </td>
+                            <td>{{ $user->first_name }}</td>
+                            <td>{{ $user->last_name }} </td>
                             <td>{{ $user->name }}</td>
-                            <td>{{ $user->estado }}</td>
                             <td><a href="{{ route('users.show',   [$user->id]) }}">View  </a></td>
                             <td><a href="{{ route('users.edit', $user->id) }}">Update</a></td>
                             <td><a href="{{ route('users.destroy',[$user->id]) }}" >Delete</a></td>

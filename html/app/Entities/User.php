@@ -22,7 +22,7 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['firstName', 'lastName', 'email', 'password', 'phoneNumber', 'country', 'state', 'imageUrl', 'id_profile'];
+	protected $fillable = ['first_name', 'last_name', 'email', 'password', 'phone_number', 'profile_id'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -43,14 +43,14 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
     public function scopeFirstname($query, $search)
     {
         if (trim($search) != '')
-            $query->orWhere('firstName', 'like', "%$search%");
+            $query->orWhere('first_name', 'like', "%$search%");
     }
 
     // Mutators
     public function setImageurlAttribute($value)
     {
         if (is_null($value))
-            $this->attributes['imageUrl'] = 'nopic.jpg';
+            $this->attributes['image_url'] = 'nopic.jpg';
     }
 
     public function setPasswordAttribute($value)
@@ -61,7 +61,7 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
     // Accessors
     public function getFullnameAttribute()
     {
-        return $this->lastName . ', ' . $this->firstName;
+        return $this->last_name . ', ' . $this->first_name;
     }
 
 

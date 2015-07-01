@@ -39,7 +39,7 @@ class UsersController extends Controller {
 
 	public function store(UserCreateRequest $request)
 	{
-        $datos = $request->only('firstName', 'lastName', 'email', 'password', 'phoneNumber', 'country', 'state', 'imageUrl', 'id_profile');
+        $datos = $request->only('first_name', 'last_Name', 'email', 'password', 'phone_number', 'profile_id');
        // dd($datos);
         $user = $this->userRepo->create($datos);
 
@@ -68,13 +68,13 @@ class UsersController extends Controller {
 	{
 
 		$user = $this->userRepo->find($route->getParameter('id'));
-        $datos = $request->only('firstName', 'lastName', 'email', 'password', 'phoneNumber', 'country', 'state', 'imageUrl' , 'id_profile');
+        $datos = $request->only('first_name', 'last_Name', 'email', 'password', 'phone_number', 'profile_id');
+
 
         if ($request->get('password') != '')
             $datos['password'] = $request->get('password');
 
         $user = $this->userRepo->edit($user, $datos);
-
 		return redirect()->back()->with('msg_ok', 'Usuario editado correctamente');
 	}
 

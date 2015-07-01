@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Repositories;
-
 use App\Entities\User;
 
 class UserRepo extends BaseRepo {
@@ -13,11 +12,11 @@ class UserRepo extends BaseRepo {
 
     public function ListAndPaginate($search = null, $paginate = 50)
     {
-        $qry = User::select('users.id as id', 'users.firstName as firstName', 'users.lastName as lastName' , 'users.country as country', 'profiles.name as name', 'users.estado as estado'            )
-            ->orderBy('firstName')
-            ->orderBy('lastName')
+        $qry = User::select('users.id as id', 'users.first_name as first_name', 'users.last_name as last_name' , 'profiles.name as name' )
+            ->orderBy('first_name')
+            ->orderBy('last_name')
             //nombre de la tabla a la cual apunta, foreignkey, clave primaria
-            ->join('profiles', 'users.id_profile', '=', 'profiles.id' )
+            ->join('profiles', 'users.profile_id', '=', 'profiles.id' )
             ->firstname($search)
             ->paginate($paginate);
 

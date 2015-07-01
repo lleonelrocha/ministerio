@@ -22,14 +22,12 @@ class UserCreateRequest extends Request {
 	public function rules()
 	{
 		return [
-			'firstName' => 'required|max:255',
-            'lastName' => 'required|max:255',
+			'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|max:255',
-            'phoneNumber' => 'max:255',
-            'country' => 'required|max:255',
-            'state' => 'required|max:255',
-            'id_profile' => 'required',
+            'phone_number' => 'max:255',
+            'profile_id' => 'required',
             'imageUrl' => 'max:255'
 		];
 	}
