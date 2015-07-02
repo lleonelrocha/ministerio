@@ -12,5 +12,11 @@
             'uses' => 'ProfilesController@store'
         ]);
 
+        Route::get('create', [
+           'as' => 'profile.create',
+            'uses' => 'ProfilesController@create'
+
+        ]);
+
     });
 

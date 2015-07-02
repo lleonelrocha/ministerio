@@ -22,6 +22,11 @@ class ProfilesController extends Controller {
         return view('profile.index' ,compact('profiles'));
     }
 
+    public function create()
+    {
+        return view('profile.create');
+    }
+
      public function store()
      {
             return 'guardado nuevo perfil';
