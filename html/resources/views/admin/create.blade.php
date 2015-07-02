@@ -6,9 +6,7 @@
 	<div class="jumbotron">
 		<div class="row">
 
-                {!! Form::open(['route' => 'users.store', 'method' => 'POST']) !!}
-
-
+            {!! Form::open(['route' => 'users.store', 'method' => 'POST']) !!}
             <fieldset>
                 <legend>Creando nuevo usuario</legend>
                 @include('admin.partials.form')

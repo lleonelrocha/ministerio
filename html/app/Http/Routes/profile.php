@@ -1,10 +1,15 @@
 <?php
 
-    Route::group(['prefix' => 'profile', 'middleware'=>'is_admin', 'roles'=> [3] ], function(){
+    Route::group(['prefix' => 'profile', 'middleware'=>'is_admin', 'roles'=> [3]], function(){
 
         Route::get('/', [
-            'as' => 'profile.index',
+            'as'   => 'profile.index',
             'uses' => 'ProfilesController@index'
+        ]);
+
+        Route::post('profile', [
+            'as'   => 'profile.store',
+            'uses' => 'ProfilesController@store'
         ]);
 
     });
