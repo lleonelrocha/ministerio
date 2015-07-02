@@ -12,7 +12,11 @@
 
             <a class="navbar-brand" href="#"><strong>{{ Auth::user()->fullname }}</strong></a>
 
-            <a class="navbar-brand" href="{{route('users.index')}}">Usuarios</a>
+            <a class="navbar-brand" href="{{route('users.index')}}">usuarios</a>
+
+            @if(Auth::user()->profile_id == 3)
+                <a class="navbar-brand" href="{{route('profile.index')}}">perfiles</a>
+             @endif
         </div>
 
             <ul class="nav navbar-nav navbar-right">

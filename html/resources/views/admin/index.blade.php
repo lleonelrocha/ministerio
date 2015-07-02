@@ -35,13 +35,12 @@
                         <th>#</th>
                         <th>Firstname</th>
                         <th>Lastname</th>
-                        <th>Country</th>
-                        <th>Name</th>
-                        <th>Estado</th>
+                        <th>Tipo</th>
                         <th></th>
                         <th></th>
                         <th></th>
                         <th></th>
+
                     </tr>
                     </thead>
                     <tbody>
@@ -51,6 +50,7 @@
                             <td>{{ $user->first_name }}</td>
                             <td>{{ $user->last_name }} </td>
                             <td>{{ $user->name }}</td>
+
                             <td><a href="{{ route('users.show',   [$user->id]) }}">View  </a></td>
                             <td><a href="{{ route('users.edit', $user->id) }}">Update</a></td>
                             <td><a href="{{ route('users.destroy',[$user->id]) }}" >Delete</a></td>

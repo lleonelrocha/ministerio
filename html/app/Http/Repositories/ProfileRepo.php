@@ -15,9 +15,11 @@ class ProfileRepo extends BaseRepo {
 
     public function ListProfile()
     {
-        $qry = Profile::all()->roles();
-        return $qry;
 
-    }
+        $qry = Profile::all();
+        return $qry;
+      }
+
+
 
 }

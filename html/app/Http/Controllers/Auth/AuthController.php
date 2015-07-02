@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller {
 
@@ -13,6 +14,7 @@ class AuthController extends Controller {
 
     public function authenticate(Request $request)
     {
+
 
         if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')]))
             return redirect()->intended('home');

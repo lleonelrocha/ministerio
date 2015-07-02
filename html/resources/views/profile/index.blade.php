@@ -1,7 +1,6 @@
 @extends('app')
 @section('body')
-    @include('profile.partials.menu')
-
+    @include('partials.menu')
     <div class="row">
         <div class="col-xs-12">
             <h2 >Perfiles de la base de datos</h2>
@@ -22,15 +21,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {{dd($profiles)}}
+
+
 
                         @foreach($profiles as $profile)
                             <tr>
                                 <td>{{ $profile->id }}  </td>
                                 <td>{{ $profile->name }}</td>
-
-
-
                                 <td><a href="">View  </a></td>
                                 <td><a href="">Update</a></td>
                                 <td><a href="" >Delete</a></td>
