@@ -14,8 +14,8 @@ class ProfileRepo extends BaseRepo {
     public function ListProfile()
     {
         $qry = Profile::with('profile', 'profiles_roles', 'role');
-        dd($qry);
-        //return $qry;
+        //dd($qry);
+        return $qry;
 
       }
 

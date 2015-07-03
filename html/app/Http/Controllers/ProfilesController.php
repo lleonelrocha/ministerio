@@ -19,19 +19,19 @@ class ProfilesController extends Controller {
     {
         $profile = $this->profileRepo->find(1);
         dd($profile->roles);
-        $profiles = '';
+        //$profiles = '';
         // dd($profiles);
         return view('profile.index' ,compact('profiles'));
     }
 
     public function create()
     {
-        return view('profile.create');
+         return view('profile.create');
     }
 
      public function store()
      {
-            return 'guardado nuevo perfil';
+         return 'guardado nuevo perfil';
      }
 
 
