@@ -40,7 +40,7 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
     }
 
     // Scopes
-    public function scopeFirstname($query, $search)
+    public function scopeFirst_name($query, $search)
     {
         if (trim($search) != '')
             $query->orWhere('first_name', 'like', "%$search%");

@@ -47,21 +47,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserRepo.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserRepo.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/app/Http/Repositories/UserRepo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63931626" vertical-offset="170" max-vertical-offset="1071">
-              <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+            <state vertical-scroll-proportion="-34.26923" vertical-offset="44" max-vertical-offset="1037">
+              <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/resources/views/admin/index.blade.php">
+      <file leaf-file-name="Role.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/html/app/Entities/Role.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-32.03846" vertical-offset="51" max-vertical-offset="1394">
-              <caret line="52" column="58" selection-start-line="52" selection-start-column="58" selection-end-line="52" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.52307695" vertical-offset="0" max-vertical-offset="585">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -101,6 +101,7 @@
         <option value="$PROJECT_DIR$/html/app/Http/Controllers/RolesController.php" />
         <option value="$PROJECT_DIR$/html/app/Http/Routes/user.php" />
         <option value="$PROJECT_DIR$/html/app/Http/Controllers/UsersController.php" />
+        <option value="$PROJECT_DIR$/html/app/Entities/User.php" />
         <option value="$PROJECT_DIR$/html/resources/views/admin/index.blade.php" />
         <option value="$PROJECT_DIR$/html/app/Http/Repositories/UserRepo.php" />
       </list>
@@ -869,14 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/app/Entities/Role.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52307695" vertical-offset="0" max-vertical-offset="585">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/app/Http/Controllers/RolesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11623932" vertical-offset="0" max-vertical-offset="585">
@@ -891,16 +884,6 @@
           <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
           <folding>
             <element signature="e#39#77#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/app/Entities/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.6153846" vertical-offset="724" max-vertical-offset="1309">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="e#31#67#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -921,6 +904,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/html/resources/views/admin/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846" vertical-offset="459" max-vertical-offset="1343">
+          <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html/app/Http/Controllers/UsersController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.769231" vertical-offset="51" max-vertical-offset="1989">
@@ -931,18 +922,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/resources/views/admin/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/html/app/Http/Repositories/UserRepo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-32.03846" vertical-offset="51" max-vertical-offset="1394">
-          <caret line="52" column="58" selection-start-line="52" selection-start-column="58" selection-end-line="52" selection-end-column="58" />
+        <state vertical-scroll-proportion="-34.26923" vertical-offset="44" max-vertical-offset="1037">
+          <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/app/Http/Repositories/UserRepo.php">
+    <entry file="file://$PROJECT_DIR$/html/app/Entities/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63931626" vertical-offset="170" max-vertical-offset="1071">
-          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.5811966" vertical-offset="374" max-vertical-offset="1309">
+          <caret line="42" column="26" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="35" />
+          <folding>
+            <element signature="e#31#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/app/Entities/Role.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52307695" vertical-offset="0" max-vertical-offset="585">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
