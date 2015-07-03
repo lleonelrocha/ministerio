@@ -11,9 +11,9 @@ class UserRepo extends BaseRepo {
         return new User;
     }
 
-    //public function ListAndPaginate($search = null, $paginate = 50)
 
-    public function ListAndPaginate()
+    public function ListAndPaginate($search = null, $paginate = 50)
+    //public function ListAndPaginate()
     {
 
       /* $qry = User::select('users.id as id', 'users.first_name as first_name', 'users.last_name as last_name' , 'profiles.name as name' )
@@ -27,10 +27,14 @@ class UserRepo extends BaseRepo {
     */
 
         //$user = User::find(2);
-        $qry= User::with('profile')->get();
+        $qry= User::with('profile')
+            ->select('users.first_name')
+            ->first_name($search)
+            ->paginate($paginate)
+            ->get();
 
-
-
+        //->select('users.first_name', 'profile.name' )
+        // dd($qry);
 
         return $qry;
         // $books = App\Book::with('author', 'publisher')->get();

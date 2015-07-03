@@ -17,12 +17,9 @@ class UsersController extends Controller {
         $this->userRepo = $userRepo;
 	}
 
-	public function index(Request $requests)
+	public function index()
 	{
-		$users = $this->userRepo->ListAndPaginate(
-            $requests->get('search'),
-            15
-        );
+		$users = $this->userRepo->ListAndPaginate();
 
 		return view('admin.index', compact('users'));
 	}
@@ -110,9 +107,5 @@ class UsersController extends Controller {
 
     }
 
-    public function prueba()
-    {
-        return view('admin.prueba');
-    }
 
 }

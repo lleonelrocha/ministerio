@@ -11,12 +11,12 @@
     <div class="row">
         <div class="col-xs-6">
             {!! Form::open(['method' => 'GET']) !!}
-                <div class="input-group">
-                    {!! Form::text('search', Request::get('search'), ['class' => 'form-control']) !!}
-                    <div class="input-group-btn">
-                        <button type="submit" class="btn btn-default">Buscar</button>
-                    </div>
+            <div class="input-group">
+                {!! Form::text('search', Request::get('search'), ['class' => 'form-control']) !!}
+                <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default">Buscar</button>
                 </div>
+            </div>
             {!! Form::close() !!}
         </div>
         <div class="col-xs-6 text-right">
@@ -50,6 +50,7 @@
                             <td>{{ $user->first_name }}</td>
                             <td>{{ $user->last_name }} </td>
                             <td>{{ $user->name }}</td>
+                            <td>{{ $user->profile->name }}</td>
 
                             <td><a href="{{ route('users.show',   [$user->id]) }}">View  </a></td>
                             <td><a href="{{ route('users.edit', $user->id) }}">Update</a></td>
@@ -65,7 +66,7 @@
                 </table>
             </div>
         </div>
-	</div>
+    </div>
 
     <div class="row">
         <div class="col-xs-12 text-center">
