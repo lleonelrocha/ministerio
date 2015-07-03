@@ -19,10 +19,8 @@ class Profile extends Entity {
     public function roles()
     {
        // return $this->belongsToMany(Roles::getClass());
-        return $this->belongsToMany('Role', 'profiles_roles', 'profile_id', 'role_id');
+        return $this->belongsToMany(Role::getClass(), 'profiles_roles');
 
     }
-
-
 
 }

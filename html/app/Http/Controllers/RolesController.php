@@ -7,6 +7,7 @@ use App\Http\Repositories\RoleRepo;
 class RolesController extends Controller
 {
 
+
     protected $roleRepo;
 
     public function __construct(RoleRepo $roleRepo)

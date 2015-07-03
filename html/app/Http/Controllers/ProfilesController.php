@@ -17,8 +17,10 @@ class ProfilesController extends Controller {
 
     public function index()
     {
-        $profiles = $this->profileRepo->ListProfile();
-        dd($profiles);
+        $profile = $this->profileRepo->find(1);
+        dd($profile->roles);
+        $profiles = '';
+        // dd($profiles);
         return view('profile.index' ,compact('profiles'));
     }
 

@@ -11,15 +11,12 @@ class ProfileRepo extends BaseRepo {
         return new Profile;
     }
 
-
-
     public function ListProfile()
     {
+        $qry = Profile::with('profile', 'profiles_roles', 'role');
+        dd($qry);
+        //return $qry;
 
-        $qry = Profile::find(1);
-        return $qry;
       }
-
-
 
 }
