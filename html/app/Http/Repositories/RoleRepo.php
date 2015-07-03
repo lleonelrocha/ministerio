@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\Repositories;
-use App\Entities\Roles;
+use App\Entities\Role;
 
 
 class RolesRepo extends BaseRepo
@@ -8,7 +8,16 @@ class RolesRepo extends BaseRepo
 
     public function getModel()
     {
-        return new Roles();
+        return new Role();
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function listRole()
+    {
+        $qry= Role::all();
+        return $qry;
     }
 
 

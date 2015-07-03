@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Repositories;
 use App\Entities\Profile;
-use App\Entities\Roles;
+
 
 class ProfileRepo extends BaseRepo {
 
@@ -16,7 +16,7 @@ class ProfileRepo extends BaseRepo {
     public function ListProfile()
     {
 
-        $qry = Profile::all();
+        $qry = Profile::find(1);
         return $qry;
       }
 

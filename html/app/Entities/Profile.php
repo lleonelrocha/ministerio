@@ -7,6 +7,8 @@ class Profile extends Entity {
     protected $table = 'profiles';
 
 
+    protected $fillable = ['name'];
+
 	// Relaciones
     public function users()
     {
@@ -16,7 +18,9 @@ class Profile extends Entity {
 
     public function roles()
     {
-        return $this->belongsToMany(Roles::getClass());
+       // return $this->belongsToMany(Roles::getClass());
+        return $this->belongsToMany('Role', 'profiles_roles', 'profile_id', 'role_id');
+
     }
 
 
