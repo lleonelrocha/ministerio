@@ -3,7 +3,7 @@ namespace App\Entities;
 
 class Role extends Entity {
 
-
+    //table
     protected $table = 'roles';
 
     protected $fillable = ['name'];

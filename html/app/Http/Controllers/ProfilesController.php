@@ -17,10 +17,12 @@ class ProfilesController extends Controller {
 
     public function index()
     {
-        $profile = $this->profileRepo->find(1);
-        dd($profile->roles);
+
+        $profiles = $this->profileRepo->ListProfile();
+        // $profiles = $qry->roles;
+        //dd($profile->roles);
         //$profiles = '';
-        // dd($profiles);
+        //dd($profiles);
         return view('profile.index' ,compact('profiles'));
     }
 
@@ -29,11 +31,20 @@ class ProfilesController extends Controller {
          return view('profile.create');
     }
 
-     public function store()
-     {
+    public function store()
+    {
          return 'guardado nuevo perfil';
-     }
+    }
 
+    public function update()
+    {
+        return 'datos recibidos';
+    }
+
+    public function edit()
+    {
+        return 'edit' ;
+    }
 
 
 

@@ -3,7 +3,7 @@ namespace App\Http\Repositories;
 use App\Entities\Role;
 
 
-class RolesRepo extends BaseRepo
+class RoleRepo extends BaseRepo
 {
 
     public function getModel()

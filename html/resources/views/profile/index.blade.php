@@ -39,7 +39,9 @@
                         @foreach($profiles as $profile)
                             <tr>
                                 <td>{{ $profile->id }}  </td>
-                                <td>{{ $profile->name }}</td>
+                                <td>{{ $profile->profiles->name }}</td>
+                                <td>{{ $profile->roles->name }}</td>
+
                                 <td><a href="">Update</a></td>
                                 <td><a href="" >Delete</a></td>
                             </tr>

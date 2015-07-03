@@ -17,6 +17,10 @@ class ProfileRepo extends BaseRepo {
         //dd($qry);
         return $qry;
 
+        /*$qry= User::with('profile')
+            ->first_name($search)
+            ->paginate($paginate);
+        return $qry;*/
       }
 
 }

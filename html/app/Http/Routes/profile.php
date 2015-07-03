@@ -18,5 +18,17 @@
 
         ]);
 
+        Route::get('edit', [
+           'as' => 'profile.edit',
+            'uses' => 'ProfilesController@edit'
+
+        ]);
+
+        Route::get('update', [
+        'as' => 'profile.edit',
+            'uses' => 'ProfilesController@update'
+
+        ]);
+
     });
 
