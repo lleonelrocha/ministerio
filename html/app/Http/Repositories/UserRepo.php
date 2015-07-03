@@ -11,10 +11,12 @@ class UserRepo extends BaseRepo {
         return new User;
     }
 
-    public function ListAndPaginate($search = null, $paginate = 50)
+    //public function ListAndPaginate($search = null, $paginate = 50)
+
+    public function ListAndPaginate()
     {
 
-       $qry = User::select('users.id as id', 'users.first_name as first_name', 'users.last_name as last_name' , 'profiles.name as name' )
+      /* $qry = User::select('users.id as id', 'users.first_name as first_name', 'users.last_name as last_name' , 'profiles.name as name' )
             ->orderBy('first_name')
             ->orderBy('last_name')
             //nombre de la tabla a la cual apunta, foreignkey, clave primaria
@@ -22,12 +24,23 @@ class UserRepo extends BaseRepo {
             ->firstname($search)
             ->paginate($paginate);
         return $qry;
+    */
+
+        //$user = User::find(2);
+        $qry= User::with('profile')->get();
 
 
-       /* $user = User::all();
-        $qry = $user->profiles;
+
+
         return $qry;
-        */
+        // $books = App\Book::with('author', 'publisher')->get();
+        //$users = DB::table('users')->select('name', 'email')->get();
+
+        //dd($user);
+        //$qry = $user->profile;
+
+
+
     }
 
     public function delete($model)

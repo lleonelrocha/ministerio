@@ -110,5 +110,9 @@ class UsersController extends Controller {
 
     }
 
+    public function prueba()
+    {
+        return view('admin.prueba');
+    }
 
 }
