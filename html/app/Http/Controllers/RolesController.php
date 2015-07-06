@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 use App\Http\Repositories\RoleRepo;
 use App\Http\Requests\Request;
-use App\Http\Requests\role\RoleCreateRequest;
+use App\Http\Requests\RoleCreateRequest;
 
 
 class RolesController extends Controller {
@@ -24,10 +24,11 @@ class RolesController extends Controller {
 
     public function store(RoleCreateRequest $request)
     {
-        // dd($request);
-        // $datos = $request->only('name');
-        // $this->roleRepo->create($datos);
-        // return redirect()->back();
+         // dd($request);
+
+         $datos = $request->only('name');
+         $this->roleRepo->create($datos);
+         return redirect()->back();
     }
 
 

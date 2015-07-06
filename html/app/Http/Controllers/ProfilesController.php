@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Repositories\ProfileRepo;
+use App\Http\Requests\Request\ProfileCreateRequest;
 
 
 class ProfilesController extends Controller {
@@ -17,12 +18,11 @@ class ProfilesController extends Controller {
 
     public function index()
     {
-
         $profiles = $this->profileRepo->ListProfile();
         // $profiles = $qry->roles;
         // dd($profile->roles);
         // $profiles = '';
-        // dd($profiles);
+        //dd($profiles);
         return view('profile.profile.index' ,compact('profiles'));
     }
 
@@ -31,9 +31,12 @@ class ProfilesController extends Controller {
          return 'crear';
     }
 
-    public function store()
+    public function store(ProfileCreateRequest $request)
     {
-         return 'guardado nuevo perfil';
+        $datos = $request->only('name');
+        $this->profileRepo->create($datos);
+        return redirect()->back();
+        //return 'guardado nuevo perfil';
     }
 
     public function update()
