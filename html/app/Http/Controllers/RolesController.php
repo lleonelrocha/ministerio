@@ -1,5 +1,9 @@
-<?php namespace App\Http\Controllers;
+<?php
+namespace App\Http\Controllers;
 use App\Http\Repositories\RoleRepo;
+use App\Http\Requests\role\RoleCreateRequest;
+
+
 
 class RolesController extends Controller {
 
@@ -13,22 +17,22 @@ class RolesController extends Controller {
 
     public function index()
     {
-        return 'return index';
+        $roles= $this->roleRepo->listRole();
+        return view('profile.role.index', compact('roles'));
     }
 
-    public function create()
+
+    public function store(RoleCreateRequest $request)
     {
-        return 'vista crear role';
+        $datos = $request->only('name');
+        $this->roleRepo->create($datos);
+        return redirect()->back();
     }
 
-    public function store()
-    {
-        return 'store';
-    }
 
     public function edit()
     {
-        return 'vista editando';
+        return 'profile.role.edit';
     }
 
     public function update()

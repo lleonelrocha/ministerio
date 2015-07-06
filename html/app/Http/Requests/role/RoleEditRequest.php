@@ -1,9 +1,9 @@
-<?php namespace App\Http\Requests;
+<?php namespace App\Http\role\Requests;
 
 use App\Http\Requests\Request;
 use Illuminate\Routing\Route;
 
-class UserEditRequest extends Request {
+class RoleEditRequest extends Request {
 
     protected $route;
 
@@ -30,14 +30,9 @@ class UserEditRequest extends Request {
 	public function rules()
 	{
 		return [
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
-            'email' => 'required|email|unique:users,email,' . $this->route->getParameter('id'),
-            'password' => 'max:255',
-            'phone_number' => 'max:255',
-            'profile_id'=>'required',
-            'imageUrl' => 'max:255'
-		];
+            'name' => 'required|max:255',
+
+        ];
 	}
 
 }

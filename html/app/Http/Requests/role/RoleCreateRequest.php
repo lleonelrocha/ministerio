@@ -1,8 +1,8 @@
-<?php namespace App\Http\Requests;
-
+<?php
+namespace App\Http\Requests\role\RoleCreateRequest;
 use App\Http\Requests\Request;
 
-class UserCreateRequest extends Request {
+class RoleCreateRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -22,12 +22,7 @@ class UserCreateRequest extends Request {
 	public function rules()
 	{
 		return [
-			'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|max:255',
-            'phone_number' => 'max:255',
-            'profile_id' => 'required'
+			'name' => 'required|max:255',
 
 		];
 	}

@@ -3,7 +3,6 @@
 use App\Http\Repositories\UserRepo;
 use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserEditRequest;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 
 

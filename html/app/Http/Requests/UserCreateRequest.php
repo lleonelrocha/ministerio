@@ -1,5 +1,5 @@
-<?php namespace App\Http\Requests;
-
+<?php
+namespace App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\Request;
 
 class UserCreateRequest extends Request {
