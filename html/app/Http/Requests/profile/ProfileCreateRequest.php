@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\profile\ProfileCreateRequest;
+namespace App\Http\Requests\Request;
 use App\Http\Requests\Request;
 
 class ProfileCreateRequest extends Request {

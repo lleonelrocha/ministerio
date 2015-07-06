@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\profile\ProfileEditRequest;
+namespace App\Http\Requests\Request;
 use App\Http\Requests\Request;
 use Illuminate\Routing\Route;
 

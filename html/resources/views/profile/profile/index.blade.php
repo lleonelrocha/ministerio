@@ -9,11 +9,11 @@
 
     <div class="row">
         <div class="col-xs-6">
-            {!! Form::open(['route' => 'role.store',  'method' => 'POST']) !!}
+            {!! Form::open(['method' => 'GET']) !!}
             <div class="input-group">
                 {!! Form::text('name', null,  ['class' => 'form-control']) !!}
                 <div class="input-group-btn">
-                    <button type="submit" class="btn btn-success" >Crear nuevo role</button>
+                    <button type="submit" class="btn btn-success" >Crear nuevo profile</button>
                 </div>
             </div>
             {!! Form::close() !!}
@@ -22,8 +22,9 @@
 
     <br class="clearfix" />
 
-    <div class="row">
-        <div class="col-xs-6">
+    <div clas="row">
+        <div class="col-xs-12">
+
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover table-condensed">
                     <thead>
@@ -35,17 +36,18 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($roles as $role)
+                    @foreach($profiles as $profile)
                         <tr>
-                            <td>{{ $role->id }}  </td>
-                            <td>{{ $role->name }}</td>
-                            <td><a href="{{route('role.edit')}}">Update</a></td>
+                            <td>{{ $profile->id }}  </td>
+                            <td>{{ $profile->name }}</td>
+                            <td><a href="">Update</a></td>
                             <td><a href="" >Delete</a></td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
             </div>
+
         </div>
     </div>
 @endsection()

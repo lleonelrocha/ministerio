@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Repositories\ProfileRepo;
-use App\Http\Repositories\RoleRepo;
+
 
 class ProfilesController extends Controller {
 
@@ -23,7 +23,7 @@ class ProfilesController extends Controller {
         //dd($profile->roles);
         //$profiles = '';
         //dd($profiles);
-        return view('profile.index' ,compact('profiles'));
+        return view('profile.profile.index' ,compact('profiles'));
     }
 
     public function create()

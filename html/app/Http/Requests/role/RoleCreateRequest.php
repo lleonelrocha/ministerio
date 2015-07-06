@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Requests\role\RoleCreateRequest;
+namespace App\Http\Requests\Request;
 use App\Http\Requests\Request;
 
 class RoleCreateRequest extends Request {

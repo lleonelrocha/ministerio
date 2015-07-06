@@ -24,6 +24,7 @@ class RolesController extends Controller {
 
     public function store(RoleCreateRequest $request)
     {
+        // dd($request);
         $datos = $request->only('name');
         $this->roleRepo->create($datos);
         return redirect()->back();
