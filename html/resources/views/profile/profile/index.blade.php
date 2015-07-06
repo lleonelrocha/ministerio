@@ -9,7 +9,7 @@
 
     <div class="row">
         <div class="col-xs-6">
-            {!! Form::open(['route' => 'role.store',  'method' => 'POST']) !!}
+            {!! Form::open(['route' => 'profile.store',  'method' => 'POST']) !!}
             <div class="input-group">
                 {!! Form::text('name', null,  ['class' => 'form-control']) !!}
                 <div class="input-group-btn">
