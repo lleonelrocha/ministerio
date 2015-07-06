@@ -1,6 +1,6 @@
 <?php
-namespace App\Http\Controllers\ProfilesRolesController;
-use App\Http\Controllers\Controller;
+namespace App\Http\Controllers;
+
 
 class ProfilesRolesController extends Controller {
 
