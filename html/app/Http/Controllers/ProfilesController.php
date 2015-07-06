@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Http\Repositories\ProfileRepo;
-use App\Http\Requests\Request\ProfileCreateRequest;
+use App\Http\Requests\ProfileCreateRequest;
+use App\Http\Requests\Request;
 
 
 class ProfilesController extends Controller {
