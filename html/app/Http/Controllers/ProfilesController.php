@@ -20,9 +20,9 @@ class ProfilesController extends Controller {
 
         $profiles = $this->profileRepo->ListProfile();
         // $profiles = $qry->roles;
-        //dd($profile->roles);
-        //$profiles = '';
-        //dd($profiles);
+        // dd($profile->roles);
+        // $profiles = '';
+        // dd($profiles);
         return view('profile.profile.index' ,compact('profiles'));
     }
 

@@ -9,7 +9,7 @@
 
     <div class="row">
         <div class="col-xs-6">
-            {!! Form::open(['method' => 'GET']) !!}
+            {!! Form::open(['route' => 'role.store',  'method' => 'POST']) !!}
             <div class="input-group">
                 {!! Form::text('name', null,  ['class' => 'form-control']) !!}
                 <div class="input-group-btn">
@@ -24,7 +24,6 @@
 
     <div clas="row">
         <div class="col-xs-12">
-
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover table-condensed">
                     <thead>
@@ -40,14 +39,13 @@
                         <tr>
                             <td>{{ $profile->id }}  </td>
                             <td>{{ $profile->name }}</td>
-                            <td><a href="">Update</a></td>
+                            <td><a href="{{(route('profile.edit'))}}">Update</a></td>
                             <td><a href="" >Delete</a></td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
             </div>
-
         </div>
     </div>
 @endsection()

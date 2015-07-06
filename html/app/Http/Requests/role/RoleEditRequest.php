@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Requests\Request;
+namespace App\Http\role\RoleEditRequest;
 use App\Http\Requests\Request;
 use Illuminate\Routing\Route;
 
@@ -12,21 +13,13 @@ class RoleEditRequest extends Request {
         $this->route = $route;
     }
 
-	/**
-	 * Determine if the user is authorized to make this request.
-	 *
-	 * @return bool
-	 */
+
 	public function authorize()
 	{
 		return true;
 	}
 
-	/**
-	 * Get the validation rules that apply to the request.
-	 *
-	 * @return array
-	 */
+
 	public function rules()
 	{
 		return [
