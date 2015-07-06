@@ -1,6 +1,7 @@
 <?php
-namespace App\Http\Requests\UserCreateRequest;
+namespace App\Http\Requests;
 use App\Http\Requests\Request;
+
 
 class UserCreateRequest extends Request {
 

@@ -4,6 +4,7 @@ use App\Http\Repositories\UserRepo;
 use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserEditRequest;
 use Illuminate\Routing\Route;
+use App\Http\Requests\Request;
 
 
 class UsersController extends Controller {
@@ -36,7 +37,7 @@ class UsersController extends Controller {
 	public function store(UserCreateRequest $request)
 	{
         $datos = $request->only('first_name', 'last_name', 'email', 'password', 'phone_number', 'profile_id');
-        // dd($datos);
+         dd($datos);
         $this->userRepo->create($datos);
         return redirect()->back()->with('msg_ok', 'Usuario creado correctamente.');
 	}
@@ -47,6 +48,8 @@ class UsersController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
+
+
 	public function edit(Route $route)
 	{
         $user= $this->userRepo->find($route->getParameter('id'));
