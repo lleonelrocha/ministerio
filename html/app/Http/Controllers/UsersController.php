@@ -42,13 +42,6 @@ class UsersController extends Controller {
         return redirect()->back()->with('msg_ok', 'Usuario creado correctamente.');
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-
 
 	public function edit(Route $route)
 	{
@@ -56,12 +49,7 @@ class UsersController extends Controller {
 		return view('admin.update', compact('user'));
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+
 	public function update(UserEditRequest $request, Route $route)
 	{
 

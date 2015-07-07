@@ -18,15 +18,21 @@
 
         ]);
 
-        Route::get('edit', [
-           'as' => 'profile.edit',
-            'uses' => 'ProfilesController@edit'
+        Route::get('destroy/{id}', [
+           'as' => 'profile.destroy',
+            'uses' => 'ProfilesController@destroy'
 
         ]);
 
-        Route::get('update', [
-        'as' => 'profile.edit',
-            'uses' => 'ProfilesController@update'
+        Route::get('edit/{id}', [
+            'as' => 'profile.edit',
+            'uses' => 'ProfilesController@edit'
+        ]);
+
+
+        Route::get('profile_role', [
+           'as' => 'profile.profile_role',
+            'uses' => 'ProfilesController@profile_role'
 
         ]);
 

@@ -16,7 +16,12 @@
 
             @if(Auth::user()->profile_id == 3)
                 <a class="navbar-brand" href="{{route('profile.index')}}">perfiles</a>
-             @endif
+                <a class="navbar-brand" href="{{route('role.index')}}">roles</a>
+
+                <a class="navbar-brand" href="{{route('profile.profile_role')}}">perfiles_roles</a>
+
+
+            @endif
         </div>
 
             <ul class="nav navbar-nav navbar-right">

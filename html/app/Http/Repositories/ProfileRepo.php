@@ -24,4 +24,9 @@ class ProfileRepo extends BaseRepo {
         return $qry;
       }
 
+    public function delete($model)
+    {
+        return $model->delete();
+    }
+
 }

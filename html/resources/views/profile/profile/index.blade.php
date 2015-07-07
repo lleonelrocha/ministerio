@@ -39,8 +39,8 @@
                         <tr>
                             <td>{{ $profile->id }}  </td>
                             <td>{{ $profile->name }}</td>
-                            <td><a href="{{(route('profile.edit'))}}">Update</a></td>
-                            <td><a href="" >Delete</a></td>
+                            <td><a href="{{(route('profile.edit', [$profile->id]   ))}}" >Update</a></td>
+                            <td><a href="{{(route('profile.destroy',[$profile->id] ))}}" >Delete</a></td>
                         </tr>
                     @endforeach
                     </tbody>

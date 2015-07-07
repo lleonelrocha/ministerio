@@ -10,6 +10,7 @@
             </button>
 
             <a class="navbar-brand text-center"  href="{{route('profile.index')}}" ><strong>Profile</strong></a>
+
             <a class="navbar-brand text-center" href="#" ><strong>Roles</strong></a>
 
 
