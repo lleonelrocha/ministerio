@@ -28,7 +28,7 @@
                 <table class="table table-striped table-bordered table-hover table-condensed">
                     <thead>
                     <tr>
-
+                        <th>#</th>
                         <th>Admin</th>
                         <th>Roles</th>
                         <th></th>
@@ -38,10 +38,11 @@
                     <tbody>
                         @foreach($profiles->roles as $role)
                             <tr>
-                                <td>{{ $profiles->name }} </td>
+                                <td>{{ $profiles->name }}</td>
+                                <td>{{ $role->id }}       </td>
                                 <td>{{ $role->name }}     </td>
                                 <td><a href="">Update</a> </td>
-                                <td><a href="">Delete</a></td>
+                                <td><a href="" >Delete</a></td>
                             </tr>
                         @endforeach
                     </tbody>

@@ -12,15 +12,15 @@
 
             <a class="navbar-brand" href="#"><strong>{{ Auth::user()->fullname }}</strong></a>
 
-            <a class="navbar-brand" href="{{route('users.index')}}">usuarios</a>
+            @if(Auth::user()->profile_id == 2)
+            <a class="navbar-brand" href={{route('users.index')}}">tus fotos</a>
+            @endif
 
-            @if(Auth::user()->profile_id == 3)
+            @if(Auth::user()->profile_id == 3 )
                 <a class="navbar-brand" href="{{route('profile.index')}}">perfiles</a>
                 <a class="navbar-brand" href="{{route('role.index')}}">roles</a>
-
+                <a class="navbar-brand" href="{{route('users.index')}}">usuarios</a>
                 <a class="navbar-brand" href="{{route('profile.profile_role')}}">perfiles_roles</a>
-
-
             @endif
         </div>
 

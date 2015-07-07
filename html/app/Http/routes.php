@@ -19,6 +19,8 @@ Route::group(['middleware' => 'auth', 'is_admin' ], function() {
 
     require(__DIR__ . '/Routes/post.php');
 
+
+
 });
 
 
