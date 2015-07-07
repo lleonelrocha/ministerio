@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Http\Repositories\RoleRepo;
+use App\Http\Repositories\Role;
 use App\Http\Requests\Request;
 use App\Http\Requests\RoleCreateRequest;
 
@@ -32,9 +33,19 @@ class RolesController extends Controller {
     }
 
 
-    public function edit()
+    public function edit($id)
     {
-        return 'profile.role.edit';
+        $role = $this->roleRepo->find($id);
+        return view('profile.role.edit', compact('role'));
+    }
+
+    public function destroy($id)
+    {
+        //return 'destroy'. $id;
+        $model = $this->roleRepo->find($id);
+        $this->roleRepo->delete($model);
+        return redirect()->back();
+
     }
 
     public function update()

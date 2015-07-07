@@ -17,9 +17,15 @@ Route::group(['prefix' => 'role'], function() {
         'uses' =>'RolesController@store'
     ]);
 
-    Route::get('edit', [
+    Route::get('edit/{id}', [
         'as'   => 'role.edit',
         'uses' => 'RolesController@edit'
+    ]);
+
+    Route::get('destroy/{id}',[
+       'as' => 'role.destroy',
+        'uses' => 'RolesController@destroy'
+
     ]);
 
     Route::post('update', [

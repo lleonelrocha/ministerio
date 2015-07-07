@@ -15,10 +15,13 @@
 
                         <div class="col-xs-12 col-lg-8">
 
+
+
                             {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'PUT']) !!}
                             <fieldset>
                                 <legend>Actualizando datos de {{ $user->fullname }}</legend>
                                 @include('admin.partials.form')
+
                                 {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
                             </fieldset>
                             {!! Form::close() !!}

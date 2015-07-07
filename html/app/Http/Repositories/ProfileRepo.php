@@ -3,7 +3,8 @@ namespace App\Http\Repositories;
 use App\Entities\Profile;
 
 
-class ProfileRepo extends BaseRepo {
+class ProfileRepo extends BaseRepo
+{
 
 
     public function getModel()
@@ -13,7 +14,7 @@ class ProfileRepo extends BaseRepo {
 
     public function ListProfile()
     {
-         //$qry = Profile::with('profile', 'profiles_roles', 'role');
+        //$qry = Profile::with('profile', 'profiles_roles', 'role');
         $qry = Profile::all();
         //dd($qry);
 
@@ -22,11 +23,13 @@ class ProfileRepo extends BaseRepo {
             ->paginate($paginate);
         */
         return $qry;
-      }
+
+    }
 
     public function delete($model)
     {
         return $model->delete();
     }
+
 
 }

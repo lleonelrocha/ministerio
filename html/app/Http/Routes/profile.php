@@ -29,6 +29,12 @@
             'uses' => 'ProfilesController@edit'
         ]);
 
+        Route::get('update/{id}', [
+           'as' => 'profile.update',
+            'uses' => 'ProfilesController@update'
+
+        ]);
+
 
         Route::get('profile_role', [
            'as' => 'profile.profile_role',

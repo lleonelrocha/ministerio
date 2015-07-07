@@ -39,8 +39,10 @@
                         <tr>
                             <td>{{ $role->id }}  </td>
                             <td>{{ $role->name }}</td>
-                            <td><a href="{{route('role.edit')}}">Update</a></td>
-                            <td><a href="" >Delete</a></td>
+                            <td><a href="{{route('role.edit', [$role->id] )}}">Update</a></td>
+                            <td><a href="{{route('role.destroy', [$role->id] )}}" >Delete</a></td>
+
+
                         </tr>
                     @endforeach
                     </tbody>
