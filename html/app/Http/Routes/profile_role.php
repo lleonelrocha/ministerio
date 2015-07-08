@@ -12,7 +12,7 @@ Route::group(['prefix' => 'profile_role', 'middleware'=>'is_admin', 'roles'=> [3
         'uses' => 'ProfilesRolesController@create'
     ]);
 
-    Route::post('store', [
+    Route::get('store', [
         'as'   => 'profile_role.store',
         'uses' => 'ProfilesRolesController@store'
     ]);

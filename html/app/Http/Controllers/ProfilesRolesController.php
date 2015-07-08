@@ -27,9 +27,11 @@ class ProfilesRolesController extends Controller{
         return 'edit';
     }
 
-    public function store($request)
+    public function store()
     {
-        dd($request->all());
+        $profiles= Profile::find(2);
+        $profiles->roles()->sync(array(1, 2, 4));
+         //dd($profiles);
 
            return 'store';
     }
