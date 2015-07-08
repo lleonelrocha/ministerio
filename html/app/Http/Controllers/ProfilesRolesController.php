@@ -1,31 +1,39 @@
 <?php
+
 namespace App\Http\Controllers;
-use App\Http\Repositories\ProfileRepo;
-use App\Http\Repositories\RoleRepo;
+use App\Entities\Profile;
+use App\Http\Requests\ProfileRoleCreateRequest;
+use App\Http\Requests\Request;
+use App\Entities\Role;
+
+class ProfilesRolesController extends Controller{
 
 
-
-class ProfilesRolesController extends Controller {
-
-    protected $profileRepo;
-
-    public function __construct(ProfileRepo $profileRepo)
-    {
-        //$this->middleware('auth');
-        $this->profileRepo = $profileRepo;
-    }
 
     public function index()
     {
-
-        $qry = $this->profileRepo->ListProfile();
-        //$profiles = $qry->roles;
-        // dd($profiles->roles);
-        // dd($profile->roles);
-        // $profiles = '';
-        // dd($profiles);
-
+        return view('profile.profile_role.index');
     }
+
+    public function create()
+    {
+        $profiles=Profile::All();
+        $roles=Role::ALl();
+        return view('profile.profile_role.create', compact('profiles', 'roles'));
+    }
+
+    public function edit()
+    {
+        return 'edit';
+    }
+
+    public function store($request)
+    {
+        dd($request->all());
+
+           return 'store';
+    }
+
 
 
 }
