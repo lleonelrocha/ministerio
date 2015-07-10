@@ -8,6 +8,7 @@ class Role extends Entity {
 
     protected $fillable = ['name'];
 
+    protected $name;
     //relaciones
     public function profiles()
     {

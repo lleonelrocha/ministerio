@@ -18,7 +18,7 @@ Route::group(['prefix' => 'profile_role', 'middleware'=>'is_admin', 'roles'=> [3
     ]);
 
 
-    Route::get('edit', [
+    Route::get('edit/{id}', [
         'as'   => 'profile_role.edit',
         'uses' => 'ProfilesRolesController@edit'
     ]);
@@ -27,6 +27,11 @@ Route::group(['prefix' => 'profile_role', 'middleware'=>'is_admin', 'roles'=> [3
     Route::post('update', [
         'as'   => 'profile_role.update',
         'uses' => 'ProfilesRolesController@update'
+    ]);
+
+    Route::get('destroy/{id}', [
+        'as'   => 'profile_role.destroy',
+        'uses' => 'ProfilesRolesController@destroy'
     ]);
 
 
