@@ -28,26 +28,28 @@ class ProfilesRolesController extends Controller{
     {
         // = Profile::find($id);
         //$attribute = [1, 2, 3];
-        $profiles= Profile::find($id);
-        $profiles->roles()->sync(array(1, 2, 3));
+        $profile= Profile::find($id);
+        return view('profile.profile_role.edit', compact('profile'));
+        // $profiles->roles()->sync(array(1, 2, 3));
         // $this->syncTags($id, $array);
         //Profile::find($id)->roles()->updateExistingPivot($id, array($attribute, TRUE));
-        // return 'edit';
+
 
     }
 
     public function store()
     {
         $profiles= Profile::find(2);
-        $profiles->roles()->sync(array(1, 2, 4));
+        $profiles->roles()->sync(array(3));
         //dd($profiles);
         return 'store';
     }
 
     public function destroy($id)
     {
-       // return 'id: '. $id;
+        //return 'id: '. $id;
         Profile::find($id)->roles()->detach();
+        return redirect()->back();
     }
 
 }

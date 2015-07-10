@@ -14,11 +14,8 @@
                               <fieldset>
                                   <legend>Datos de {{ $user->fullname }}</legend>
                                   <address>
-
                                       <strong>Telefono</strong>: {{ $user->phone_number }}<br>
-
                                   </address>
-
                                   <address>
                                       <strong>Email</strong><br>
                                       <a href="mailto:#">{{ $user->email }}</a>
@@ -28,7 +25,6 @@
 
 
                       </div>
-
                   </div>
               </div>
           </div>
