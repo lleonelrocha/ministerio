@@ -17,5 +17,11 @@ class PostRepo extends BaseRepo {
         return new Post;
     }
 
+    public function ListPost()
+    {
+        $qry = Post::with('user')->get();
+        return $qry;
+    }
+
 
 }

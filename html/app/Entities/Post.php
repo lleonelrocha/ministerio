@@ -13,4 +13,13 @@ class Post extends Entity {
     protected $table = 'posts';
 
 
+    protected $fillable = ['user_id', 'descripcion', 'image'];
+
+    //Relaciones
+
+    public function user()
+    {
+        return $this->belongsTo(User::getClass());
+    }
+
 }

@@ -13,7 +13,7 @@
             <a class="navbar-brand" href="#"><strong>{{ Auth::user()->fullname }}</strong></a>
 
             @if(Auth::user()->profile_id == 2)
-            <a class="navbar-brand" href={{route('users.index')}}">tus fotos</a>
+            <a class="navbar-brand" href="{{route('posts.index')}}">tus fotos</a>
             @endif
 
             @if(Auth::user()->profile_id == 3 )

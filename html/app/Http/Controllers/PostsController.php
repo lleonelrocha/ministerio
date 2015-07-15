@@ -18,7 +18,11 @@ class PostsController extends Controller {
 
     public function index()
     {
-        return view('post.index');
+
+        $posts = $this->postRepo->ListPost();
+        dd($posts);
+        //return 'index';
+        //return view('post.index');
 
     }
 

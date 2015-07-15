@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Entities\Profile;
-use App\Http\Requests\ProfileRoleCreateRequest;
-use App\Http\Requests\Request;
+//use App\Http\Requests\ProfileRoleCreateRequest;
+//use App\Http\Requests\Request;
 use App\Entities\Role;
+use Illuminate\Http\Request;
 
 
 class ProfilesRolesController extends Controller{
@@ -33,14 +34,14 @@ class ProfilesRolesController extends Controller{
         // $profiles->roles()->sync(array(1, 2, 3));
         // $this->syncTags($id, $array);
         //Profile::find($id)->roles()->updateExistingPivot($id, array($attribute, TRUE));
-
-
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        $profiles= Profile::find(2);
-        $profiles->roles()->sync(array(3));
+        dd($request->all());
+
+        $profiles= Profile::find($request->input('profile_id'));
+        $profiles->roles()->sync(array($request->all()));
         //dd($profiles);
         return 'store';
     }

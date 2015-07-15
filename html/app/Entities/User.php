@@ -24,6 +24,12 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
         return $this->belongsTo(Profile::getClass());
     }
 
+    public function post()
+    {
+        return $this->hasMany(Post::getClass());
+    }
+
+
     // Scopes
     public function scopeFirst_name($query, $search)
     {

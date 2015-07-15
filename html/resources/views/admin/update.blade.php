@@ -2,7 +2,6 @@
 @section('body')
     @include('partials.menu')
     @include('partials.messages')
-
     <div class="row">
         <div class="col-xs-12">
             <div class="panel panel-default">

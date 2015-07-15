@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => 'posts'], function() {
+Route::group(['prefix' => 'posts', 'middleware'=>'is_admin','roles'=> [2]], function() {
 
     Route::get('/', [
         'as'=> 'posts.index',
