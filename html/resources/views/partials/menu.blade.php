@@ -10,10 +10,12 @@
             </button>
 
 
-            <a class="navbar-brand" href="#"><strong>{{ Auth::user()->fullname }}</strong></a>
+            <a class="navbar-brand" href="#"><strong>{{ Auth::user()->fullname }}</strong>
 
-            @if(Auth::user()->profile_id == 2)
-            <a class="navbar-brand" href="{{route('posts.index')}}">tus fotos</a>
+
+
+                @if(Auth::user()->profile_id == 2)
+            <a class="navbar-brand" href="{{route('posts.index')}}">tus posts</a>
             @endif
 
             @if(Auth::user()->profile_id == 3 )

@@ -13,7 +13,7 @@ Route::group(['prefix' => 'posts', 'middleware'=>'is_admin','roles'=> [2]], func
         'uses'=>'PostsController@create'
     ]);
 
-    Route::get('edit', [
+    Route::get('edit/{id}', [
        'as' => 'posts.edit',
         'uses' => 'PostsController@edit'
 

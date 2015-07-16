@@ -1,20 +1,24 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Repositories\UserRepo;
+use App\Http\Repositories\PostRepo;
 use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserEditRequest;
 use Illuminate\Routing\Route;
 use App\Http\Requests\Request;
 
 
+
 class UsersController extends Controller {
 
 	protected $userRepo;
+    protected $postRepo;
 
-	public function __construct(UserRepo $userRepo)
+	public function __construct(UserRepo $userRepo, PostRepo $postRepo)
 	{
 		//$this->middleware('auth');
         $this->userRepo = $userRepo;
+        $this->postRepo = $postRepo;
 	}
 
 	public function index()
@@ -91,6 +95,7 @@ class UsersController extends Controller {
         return 'active '. $id;
 
     }
+
 
 
 }

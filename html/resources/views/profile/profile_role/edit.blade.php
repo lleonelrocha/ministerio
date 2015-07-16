@@ -21,7 +21,10 @@
 
                                 <br class="clearfix" />
 
-                                <div class="checkbox"></div>
+                                <div class="checkbox">
+
+
+                                </div>
 
                                 {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
                             </fieldset>

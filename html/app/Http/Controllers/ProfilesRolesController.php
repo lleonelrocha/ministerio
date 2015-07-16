@@ -29,7 +29,8 @@ class ProfilesRolesController extends Controller{
     {
         // = Profile::find($id);
         //$attribute = [1, 2, 3];
-        $profile= Profile::find($id);
+        $profile= Profile::find($id)->with('roles');
+        dd($profile);
         return view('profile.profile_role.edit', compact('profile'));
         // $profiles->roles()->sync(array(1, 2, 3));
         // $this->syncTags($id, $array);
@@ -38,7 +39,7 @@ class ProfilesRolesController extends Controller{
 
     public function store(Request $request)
     {
-        dd($request->all());
+         dd($request->all());
 
         $profiles= Profile::find($request->input('profile_id'));
         $profiles->roles()->sync(array($request->all()));

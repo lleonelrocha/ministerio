@@ -8,6 +8,9 @@
 
 namespace App\Http\Repositories;
 use App\Entities\Post;
+use App\Entities\Auth;
+use DB;
+
 
 
 class PostRepo extends BaseRepo {
@@ -17,11 +20,12 @@ class PostRepo extends BaseRepo {
         return new Post;
     }
 
-    public function ListPost()
+    public function ListPost($user_id)
     {
-        $qry = Post::with('user')->get();
+        $qry = Post::with('user')->where('posts.user_id', '=', $user_id)->get();
         return $qry;
     }
+
 
 
 }

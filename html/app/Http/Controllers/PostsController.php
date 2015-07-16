@@ -2,9 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Repositories\PostRepo;
-use App\Http\Controllers\Controller;
-
-
+use Auth;
 
 
 class PostsController extends Controller {
@@ -18,13 +16,19 @@ class PostsController extends Controller {
 
     public function index()
     {
+        $user_id=(Auth::user()->iduser);
+        $posts = $this->postRepo->ListPost($user_id);
 
-        $posts = $this->postRepo->ListPost();
-        dd($posts);
-        //return 'index';
-        //return view('post.index');
+        return view('post.index', compact('posts'));
 
     }
+
+    /* public function post($user_id)
+    {
+        return 'post del usuario: '.$user_id;
+    }
+    */
+
 
     public function create()
     {

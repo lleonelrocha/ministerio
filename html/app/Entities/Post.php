@@ -6,9 +6,12 @@
  * Time: 01:50 PM
  */
 namespace App\Entities;
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 
-class Post extends Entity {
+class Post extends Entity implements AuthenticatableContract {
 
+    use Authenticatable;
 
     protected $table = 'posts';
 

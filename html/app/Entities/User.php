@@ -12,7 +12,7 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
 
 	protected $table = 'users';
 
-	protected $fillable = ['first_name', 'last_name', 'email', 'phone_number', 'profile_id'];
+	protected $fillable = ['id','first_name', 'last_name', 'email', 'phone_number', 'profile_id'];
 
     protected $name;
 
@@ -55,5 +55,9 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
         return $this->last_name . ', ' . $this->first_name;
     }
 
+    public function getIduserAttribute()
+    {
+        return $this->id;
+    }
 
 }
