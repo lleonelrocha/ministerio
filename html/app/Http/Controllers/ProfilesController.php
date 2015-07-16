@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 use App\Entities\Profile;
 use App\Http\Repositories\ProfileRepo;
-use App\Http\Requests\ProfileCreateRequest;
+use App\Http\Requests\Post\ProfileCreateRequest;
+use App\Http\Requests\Post\ProfileEditRequest;
 use App\Http\Requests\Request;
 
 
@@ -41,15 +42,19 @@ class ProfilesController extends Controller {
         //return 'guardado nuevo perfil';
     }
 
-    public function update()
-    {
-        return 'datos recibidos';
-    }
 
     public function edit($id)
     {
         $profile= $this->profileRepo->find($id);
         return view('profile.profile.edit', compact('profile'));
+    }
+
+
+
+    public function update(ProfileEditRequest $request)
+    {
+        dd($request->all());
+        return 'datos recibidos';
     }
 
 
@@ -61,13 +66,6 @@ class ProfilesController extends Controller {
         return view('profile.profile_role.index',compact('profiles'));
 
 
-
-
-         //$profile= Profile::all();
-         //$pro_rol = $profile->roles;
-         //dd($pro_rol);
-         // $profiles = $qry->roles;
-         // dd($profile->roles);
 
     }
 

@@ -3,7 +3,8 @@ namespace App\Http\Controllers;
 use App\Http\Repositories\RoleRepo;
 use App\Http\Repositories\Role;
 use App\Http\Requests\Request;
-use App\Http\Requests\RoleCreateRequest;
+use App\Http\Requests\Post\RoleCreateRequest;
+use App\Http\Requests\Post\RoleEditRequest;
 
 
 class RolesController extends Controller {
@@ -48,8 +49,9 @@ class RolesController extends Controller {
 
     }
 
-    public function update()
+    public function update(RoleEditRequest $request)
     {
+        dd($request->all());
         return 'guardando datos';
     }
 

@@ -1,6 +1,7 @@
 <?php
-namespace App\Http\Requests\Request;
+namespace App\Http\Requests\Post;
 use App\Http\Requests\Request;
+
 
 class ProfileCreateRequest extends Request {
 

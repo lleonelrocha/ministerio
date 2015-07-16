@@ -2,8 +2,8 @@
 
 use App\Http\Repositories\UserRepo;
 use App\Http\Repositories\PostRepo;
-use App\Http\Requests\UserCreateRequest;
-use App\Http\Requests\UserEditRequest;
+use App\Http\Requests\Post\UserCreateRequest;
+use App\Http\Requests\Post\UserEditRequest;
 use Illuminate\Routing\Route;
 use App\Http\Requests\Request;
 

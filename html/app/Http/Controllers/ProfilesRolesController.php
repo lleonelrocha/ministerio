@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\Entities\Profile;
-//use App\Http\Requests\ProfileRoleCreateRequest;
-//use App\Http\Requests\Request;
 use App\Entities\Role;
 use Illuminate\Http\Request;
 

@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Requests\Request;
+namespace App\Http\Requests\Post;
 use App\Http\Requests\Request;
 use Illuminate\Routing\Route;
 
