@@ -23,21 +23,25 @@ class PostsController extends Controller {
 
     }
 
-    /* public function post($user_id)
-    {
-        return 'post del usuario: '.$user_id;
-    }
-    */
-
 
     public function create()
     {
-        return 'vista create';
+        return view ('post.create');
+
+    }
+
+    public function store()
+    {
+        return 'datos recibidos';
     }
 
     public function edit()
     {
-        return 'vista edit';
+        return view('post.edit');
+    }
+    public function update()
+    {
+        return 'datos recibidos para actualizar';
     }
 
 

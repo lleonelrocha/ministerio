@@ -13,10 +13,24 @@ Route::group(['prefix' => 'posts', 'middleware'=>'is_admin','roles'=> [2]], func
         'uses'=>'PostsController@create'
     ]);
 
+    Route::post('store', [
+        'as' => 'posts.store',
+        'uses' => 'PostsController@store'
+
+    ]);
+
     Route::get('edit/{id}', [
-       'as' => 'posts.edit',
+        'as' => 'posts.edit',
         'uses' => 'PostsController@edit'
 
     ]);
+
+    Route::post('update', [
+        'as'=> 'posts.update',
+        'uses' => 'PostsController@update'
+
+    ]);
+
+
 
 });
