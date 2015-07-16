@@ -1,7 +1,12 @@
 <?php
 namespace App\Http\Controllers;
 
+
 use App\Http\Repositories\PostRepo;
+use App\Http\Requests\Post\PostCreateRequest;
+use App\Http\Requests\Post\PostEditRequest;
+
+use Illuminate\Http\Request;
 use Auth;
 
 
@@ -30,17 +35,22 @@ class PostsController extends Controller {
 
     }
 
-    public function store()
+    public function store(PostCreateRequest $request)
     {
+
+        dd($request->all());
         return 'datos recibidos';
     }
 
-    public function edit()
+    public function edit($id)
     {
-        return view('post.edit');
+        $post = $this->postRepo->find($id);
+        //dd($post);
+        return view('post.edit', compact('post'));
     }
-    public function update()
+    public function update(PostEditRequest $request)
     {
+        dd($request->all());
         return 'datos recibidos para actualizar';
     }
 

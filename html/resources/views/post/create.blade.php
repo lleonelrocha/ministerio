@@ -8,7 +8,7 @@
                 <div class="panel-body">
                         <br class="clearfix" />
 
-                            {!! Form::open(['route' => 'users.store', 'method' => 'POST']) !!}
+                            {!! Form::open(['route' => 'posts.store', 'method' => 'POST']) !!}
                             <fieldset>
                                 <legend>Creando nuevo usuario</legend>
                                 <div class="form-group">
