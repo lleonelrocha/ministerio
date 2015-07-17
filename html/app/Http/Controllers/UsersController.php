@@ -36,7 +36,7 @@ class UsersController extends Controller {
 	public function store(UserCreateRequest $request)
 	{
         $datos = $request->only('first_name', 'last_name', 'email', 'password', 'phone_number', 'profile_id');
-        // dd($datos);
+         dd($datos);
         $this->userRepo->create($datos);
         return redirect()->back()->with('msg_ok', 'Usuario creado correctamente.');
 	}

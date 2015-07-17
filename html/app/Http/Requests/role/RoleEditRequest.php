@@ -1,6 +1,5 @@
 <?php
-namespace App\Http\Requests\Request;
-namespace App\Http\role\RoleEditRequest;
+namespace App\Http\Requests\Role;
 use App\Http\Requests\Request;
 use Illuminate\Routing\Route;
 

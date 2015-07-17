@@ -5,11 +5,14 @@ use App\Http\Requests\Request;
 
 class PostEditRequest extends Request {
 
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
+    protected $route;
+
+    public function __construct(Route $route)
+    {
+        $this->route = $route;
+    }
+
+
     public function authorize()
     {
         return true;

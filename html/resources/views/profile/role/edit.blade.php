@@ -10,11 +10,11 @@
                         <div class="col-xs-12 col-lg-8">
                             <div class="row">
                                 <div class="col-xs-6">
-                                    {!! Form::model($role, ['route' => ['role.update', $role->id], 'method' => 'PUT']) !!}
+                                    {!! Form::model($role, ['route' => ['role.update', $role->id], 'method' => 'POST']) !!}
                                     <div class="input-group">
                                         {!! Form::text('name', null,  ['class' => 'form-control']) !!}
                                         <div class="input-group-btn">
-                                            <button type="submit" class="btn btn-success" >Crear nuevo profile</button>
+                                            <button type="submit" class="btn btn-success" >Editar</button>
                                         </div>
                                     </div>
                                     {!! Form::close() !!}

@@ -1,6 +1,6 @@
 <?php
 
-    Route::group(['prefix' => 'profile', 'middleware'=>'is_admin', 'roles'=> [3]], function(){
+    Route::group(['prefix' => 'profile', 'middleware'=>'is_admin', 'roles'=> [1,3] ], function(){
 
         Route::get('/', [
             'as'   => 'profile.index',
@@ -29,7 +29,7 @@
             'uses' => 'ProfilesController@edit'
         ]);
 
-        Route::get('update/{id}', [
+        Route::put('update/{id}', [
            'as' => 'profile.update',
             'uses' => 'ProfilesController@update'
 

@@ -1,6 +1,7 @@
 @extends('app')
 @section('body')
     @include('partials.menu')
+    @include('partials.messages')
     <div class="row">
         <div class="col-xs-12">
             <h2>Roles de la base de datos</h2>

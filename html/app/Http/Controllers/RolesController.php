@@ -2,10 +2,9 @@
 namespace App\Http\Controllers;
 use App\Http\Repositories\RoleRepo;
 use App\Http\Repositories\Role;
-use App\Http\Requests\Request;
-use App\Http\Requests\Post\RoleCreateRequest;
-use App\Http\Requests\Post\RoleEditRequest;
-
+use App\Http\Requests\Role\RoleCreateRequest;
+use App\Http\Requests\Role\RoleEditRequest;
+use Illuminate\Routing\Route;
 
 class RolesController extends Controller {
 
@@ -30,13 +29,13 @@ class RolesController extends Controller {
 
          $datos = $request->only('name');
          $this->roleRepo->create($datos);
-         return redirect()->back();
+         return redirect()->back()->with('msg_ok', 'Role creado correctamente');
     }
 
 
-    public function edit($id)
+    public function edit( Route $route)
     {
-        $role = $this->roleRepo->find($id);
+        $role = $this->roleRepo->find($route->getParameter('id'));
         return view('profile.role.edit', compact('role'));
     }
 
@@ -45,14 +44,16 @@ class RolesController extends Controller {
         //return 'destroy'. $id;
         $model = $this->roleRepo->find($id);
         $this->roleRepo->delete($model);
-        return redirect()->back();
+        return redirect()->back()->with('msg_ok', 'Role borrado correctamente');
 
     }
 
-    public function update(RoleEditRequest $request)
+    public function update(RoleEditRequest $request, Route $route)
     {
-        dd($request->all());
-        return 'guardando datos';
+        $role  = $this->roleRepo->find($route->getParameter('id'));
+        $datos = $request->only('name');
+        $this->roleRepo->edit($role, $datos);
+        return redirect()->back()->with('msg_ok', 'Role editado correctamente');
     }
 
 }

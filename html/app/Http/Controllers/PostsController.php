@@ -1,7 +1,5 @@
 <?php
 namespace App\Http\Controllers;
-
-
 use App\Http\Repositories\PostRepo;
 use App\Http\Requests\Post\PostCreateRequest;
 use App\Http\Requests\Post\PostEditRequest;

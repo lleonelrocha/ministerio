@@ -28,7 +28,7 @@ Route::group(['prefix' => 'role'], function() {
 
     ]);
 
-    Route::post('update', [
+    Route::post('update/{id}', [
         'as'   => 'role.update',
         'uses' => 'RolesController@update'
 

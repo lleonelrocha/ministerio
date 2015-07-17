@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Entities\Profile;
 use App\Http\Repositories\ProfileRepo;
-use App\Http\Requests\Post\ProfileCreateRequest;
-use App\Http\Requests\Post\ProfileEditRequest;
-use App\Http\Requests\Request;
+use App\Entities\Profile;
+use App\Http\Requests\Profile\ProfileCreateRequest;
+use App\Http\Requests\Profile\ProfileEditRequest;
+use Illuminate\Routing\Route;
+
 
 
 class ProfilesController extends Controller {
@@ -29,16 +30,12 @@ class ProfilesController extends Controller {
         return view('profile.profile.index' ,compact('profiles'));
     }
 
-    public function create()
-    {
-         return 'crear';
-    }
-
     public function store(ProfileCreateRequest $request)
     {
+
         $datos = $request->only('name');
         $this->profileRepo->create($datos);
-        return redirect()->back();
+        return redirect()->back()->with('msg_ok', 'Perfil creado correctamente');
         //return 'guardado nuevo perfil';
     }
 
@@ -51,10 +48,12 @@ class ProfilesController extends Controller {
 
 
 
-    public function update(ProfileEditRequest $request)
+    public function update(ProfileEditRequest $request, Route $route)
     {
-        dd($request->all());
-        return 'datos recibidos';
+        $post  = $this->profileRepo->find($route->getParameter('id'));
+        $datos = $request->only('name');
+        $this->profileRepo->edit($post, $datos);
+        return redirect()->back()->with('msg_ok', 'Perfil actualizado correctamente');
     }
 
 
@@ -64,20 +63,14 @@ class ProfilesController extends Controller {
         //$profiles = Profile::find(1);
         //dd($profiles->roles);
         return view('profile.profile_role.index',compact('profiles'));
-
-
-
     }
 
 
     public function destroy($id)
     {
-
         $model= $this->profileRepo->find($id);
         $this->profileRepo->delete($model);
-        return redirect()->back();
-
-
+        return redirect()->back()->with('msg_ok', 'Perfil borrado correctamente');
     }
 
 

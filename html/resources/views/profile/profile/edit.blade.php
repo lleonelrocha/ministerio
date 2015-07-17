@@ -15,7 +15,7 @@
                                     <div class="input-group">
                                         {!! Form::text('name', null,  ['class' => 'form-control']) !!}
                                         <div class="input-group-btn">
-                                            <button type="submit" class="btn btn-success" >Crear nuevo profile</button>
+                                            <button type="submit" class="btn btn-success" >Editar</button>
                                         </div>
                                     </div>
                                     {!! Form::close() !!}
