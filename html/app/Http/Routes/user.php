@@ -23,7 +23,7 @@ Route::group(['prefix' => 'users', 'middleware' => 'is_admin', 'roles' => [1,3]]
         'uses'=>'UsersController@edit'
     ]);
 
-    Route::put('edit/{id}', [
+    Route::put('update/{id}', [
         'as' => 'users.update',
         'uses' => 'UsersController@update'
     ]);
