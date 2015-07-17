@@ -1,7 +1,7 @@
 @extends('app')
 @section('body')
     @include('post.partials.menu')
-
+    @include('partials.messages')
     <div class="row">
         <div class="col-xs-12">
             <div class="panel panel-default">
@@ -25,6 +25,7 @@
                                     <label>Imagen</label>
                                     {!! Form::text('image', null, ['class' => 'form-control']) !!}
                                 </div>
+                                {!! Form::hidden('user_id', (Auth::user()->id_user)) !!}
 
                                 {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
                             </fieldset>

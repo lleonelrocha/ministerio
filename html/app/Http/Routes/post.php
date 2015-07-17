@@ -25,12 +25,17 @@ Route::group(['prefix' => 'posts', 'middleware'=>'is_admin','roles'=> [2]], func
 
     ]);
 
-    Route::post('update', [
+    Route::post('update/{id}', [
         'as'=> 'posts.update',
         'uses' => 'PostsController@update'
 
     ]);
 
+    Route::get('destroy/{id}', [
+       'as' => 'posts.destroy',
+        'uses' => 'PostsController@destroy'
+
+    ]);
 
 
 });

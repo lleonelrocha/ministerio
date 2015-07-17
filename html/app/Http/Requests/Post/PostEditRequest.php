@@ -24,7 +24,7 @@ class PostEditRequest extends Request {
     {
         return
             [
-                //'user_id'=>'required',
+
                 'descripcion' => 'required',
                 'image' => 'required',
                 'titulo' => 'required',

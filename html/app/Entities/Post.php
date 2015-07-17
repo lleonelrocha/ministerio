@@ -16,7 +16,7 @@ class Post extends Entity implements AuthenticatableContract {
     protected $table = 'posts';
 
 
-    protected $fillable = ['user_id', 'descripcion', 'image'];
+    protected $fillable = ['user_id', 'descripcion', 'image', 'titulo'];
 
     //Relaciones
 
@@ -24,5 +24,6 @@ class Post extends Entity implements AuthenticatableContract {
     {
         return $this->belongsTo(User::getClass());
     }
+
 
 }

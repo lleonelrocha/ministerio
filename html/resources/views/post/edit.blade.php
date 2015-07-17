@@ -1,13 +1,12 @@
 @extends('app')
 @section('body')
     @include('post.partials.menu')
-
+    @include('partials.messages')
     <div class="row">
         <div class="col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <br class="clearfix" />
-
 
                     {!! Form::model($post, ['route' => 'posts.update', 'method' => 'POST']) !!}
                     <fieldset>
