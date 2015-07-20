@@ -52,7 +52,7 @@
                             <td><a href="{{ route('users.show',   [$user->id] ) }}">View  </a></td>
                             <td><a href="{{ route('users.edit', $user->id) }}">Update</a></td>
                             <td><a href="{{ route('users.destroy',[$user->id]) }}" >Delete</a></td>
-                            @if( $user->estado == 'active' )
+                            @if( $user->estado == '0' )
                                 <td><a href="{{ route('users.desactive',[$user->id]) }}" class="btn btn-danger">Desactive</a></td>
                             @else
                                 <td><a href="{{ route('users.active',[$user->id]) }}" class="btn btn-success">Active</a></td>

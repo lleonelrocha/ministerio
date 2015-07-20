@@ -1,9 +1,10 @@
 <?php namespace App\Http\Controllers;
 
+use App\Entities\Profile;
 use App\Http\Repositories\UserRepo;
 use App\Http\Repositories\PostRepo;
-use App\Http\Requests\Post\UserCreateRequest;
-use App\Http\Requests\Post\UserEditRequest;
+use App\Http\Requests\User\UserCreateRequest;
+use App\Http\Requests\User\UserEditRequest;
 use Illuminate\Routing\Route;
 use App\Http\Requests\Request;
 
@@ -30,13 +31,15 @@ class UsersController extends Controller {
 
 	public function create()
 	{
-		return view('admin.create');
+        $profile = Profile::all();
+		return view('admin.create',compact('profile'));
 	}
 
 	public function store(UserCreateRequest $request)
 	{
+        // dd($request->all());
         $datos = $request->only('first_name', 'last_name', 'email', 'password', 'phone_number', 'profile_id');
-         dd($datos);
+        //dd($datos);
         $this->userRepo->create($datos);
         return redirect()->back()->with('msg_ok', 'Usuario creado correctamente.');
 	}
@@ -44,6 +47,7 @@ class UsersController extends Controller {
 
 	public function edit(Route $route)
 	{
+
         $user= $this->userRepo->find($route->getParameter('id'));
 		return view('admin.update', compact('user'));
 	}
@@ -52,8 +56,10 @@ class UsersController extends Controller {
 	public function update(UserEditRequest $request, Route $route)
 	{
 
+
+
 		$user = $this->userRepo->find($route->getParameter('id'));
-        $datos = $request->only('first_name', 'last_Name', 'email', 'password', 'phone_number', 'profile_id');
+        $datos = $request->only('first_name', 'last_Name', 'email', 'password', 'phone_number');
 
 
         if ($request->get('password') != '')
@@ -82,18 +88,20 @@ class UsersController extends Controller {
         return view('admin.view', compact('user'));
     }
 
-
-    public function desactive($id)
+    public function desactive(Route $route)
     {
-        return 'desactive: '. $id ;
-        //$user= $this->userRepo->find($id);
-
+        $user = $this->userRepo->find($route->getParameter('id'));
+        $user->estado = 1;
+        if($user->save())
+            return redirect()->back()->with('msg_ok', 'Usuario activado correctamente');
     }
 
-    public function active($id)
+    public function active(Route $route)
     {
-        return 'active '. $id;
-
+        $user = $this->userRepo->find($route->getParameter('id'));
+        $user->estado = 0;
+        if($user->save())
+            return redirect()->back()->with('msg_ok', 'Usuario desactivado correctamente');;
     }
 
 

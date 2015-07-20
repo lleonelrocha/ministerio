@@ -16,9 +16,11 @@ class IsAdmin {
 	public function handle($request, Closure $next)
 	{
         $acciones = $request->route()->getAction();
+
         $roles = $acciones['roles'];
 
-        if (!in_array($this->auth->user()->profile_id, $roles))
+
+        if (!in_array($this->auth->user()->profile_id,  $roles))
         //  return response('Unauthorized.', 401);
         return redirect()->intended('auth/login');
     else

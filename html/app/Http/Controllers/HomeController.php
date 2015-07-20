@@ -1,4 +1,5 @@
 <?php namespace App\Http\Controllers;
+use App;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 
@@ -11,4 +12,13 @@ class HomeController extends Controller {
          return view('home');
     }
 
+    /*public function view()
+    {
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadHTML('<h1>Test</h1>');
+        return $pdf->stream();
+
+        // return 'hokla';
+    }
+    */
 }

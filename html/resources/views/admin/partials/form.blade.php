@@ -25,11 +25,6 @@
     {!! Form::text('phone_number', null, ['class' => 'form-control']) !!}
 </div>
 
-<div class="form-group">
-    <label>Tipo</label>
-    {!! Form::select('profile_id', array('1' => 'Admin', '2' => 'Super admin', '3' =>'User'  ), 'User' ,['class'=>'form-control']) !!}
-
-</div>
 
 
 

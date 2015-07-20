@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Requests\Post;
+namespace App\Http\Requests\User;
 use App\Http\Requests\Request;
 use Illuminate\Routing\Route;
 
@@ -35,7 +35,7 @@ class UserEditRequest extends Request {
             'email' => 'required|email|unique:users,email,' . $this->route->getParameter('id'),
             'password' => 'max:255',
             'phone_number' => 'max:255',
-            'profile_id'=>'required',
+            //'profile_id'=>'required',
             'imageUrl' => 'max:255'
 		];
 	}

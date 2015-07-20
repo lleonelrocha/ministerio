@@ -14,8 +14,7 @@ class AuthController extends Controller {
 
     public function authenticate(Request $request)
     {
-
-
+       // dd($request->all());
         if (Auth::attempt(['email' => $request->get('email'), 'password' => $request->get('password')]))
             return redirect()->intended('home');
         else
