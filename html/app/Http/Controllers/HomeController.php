@@ -21,4 +21,9 @@ class HomeController extends Controller {
         // return 'hokla';
     }
     */
+
+    public function view ()
+    {
+        return 'view';
+    }
 }

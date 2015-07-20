@@ -8,6 +8,7 @@ require (__DIR__ . '/Routes/auth.php');
 require (__DIR__ . '/Routes/profile.php');
 require (__DIR__ . '/Routes/role.php');
 require (__DIR__ . '/Routes/profile_role.php');
+require (__DIR__ . '/Routes/pdf.php');
 
 
 
@@ -19,8 +20,6 @@ Route::group(['middleware' => 'auth', 'is_admin' ], function() {
     require(__DIR__ . '/Routes/user.php');
 
     require(__DIR__ . '/Routes/post.php');
-
-
 
 });
 
