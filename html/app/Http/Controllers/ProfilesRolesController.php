@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Entities\Profile;
 use App\Entities\Role;
 use Illuminate\Http\Request;
+use Input;
 
 
 class ProfilesRolesController extends Controller{
@@ -35,21 +36,45 @@ class ProfilesRolesController extends Controller{
         //Profile::find($id)->roles()->updateExistingPivot($id, array($attribute, TRUE));
     }
 
-    public function store(Request $request)
+    public function store (Request $request)
     {
-         dd($request->all());
+        //dd($request->all());
+        $array = (Input::except('profile_id', '_token'));
+        $profiles = Profile::find($request->input('profile_id'));
+        //($profiles->roles());
+        $profiles->roles()->sync(($array));
+        return redirect()->back()->with('msg_ok', 'ProfileRole creado correctamente');
+        //$profiles->roles()->detach($array);
+        //$array = (Input::except('profile_id', '_token'));
+        //$profiles->roles()->sync(array($array));
+        //dd($_REQUEST->all());
 
+
+        // $user = App\User::find(1);
+        //  $user->roles()->detach([1, 2, 3]);
+        // $profiles = Profile::find($id);
+        // $profiles->roles()->sync(array(1, 2, 3));
+
+    }
+
+    /*public function store(Request $request)
+    {
+
+
+         //dd($request->all());
+        $profiles->roles()->sync(array(1, 2, 3));
         $profiles= Profile::find($request->input('profile_id'));
         $profiles->roles()->sync(array($request->all()));
         //dd($profiles);
         return 'store';
     }
+    */
 
     public function destroy($id)
     {
         //return 'id: '. $id;
         Profile::find($id)->roles()->detach();
-        return redirect()->back();
+        return redirect()->back()->with('msg_ok', 'ProfileRole vaciado correctamente');
     }
 
 }

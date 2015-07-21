@@ -7,7 +7,7 @@
  */
 
 Route::get('pdf', [
-    'middleware' => 'estado' ,
+    'middleware' => 'est',
     'as' => 'pdf.view',
     'uses' => 'HomeController@view'
 ]);

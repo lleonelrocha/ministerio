@@ -15,7 +15,8 @@
             @yield('body')
         </div>
 
-        <script src="{{ asset('js/jquery-1.11.3.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         @yield('js')
     </body>
 </html>

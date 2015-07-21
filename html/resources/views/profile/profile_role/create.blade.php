@@ -1,6 +1,8 @@
 @extends('app')
 @section('body')
     @include('partials.menu')
+    @include('partials.messages')
+
     <div class="row">
         <div class="col-xs-12">
             <h2 >Perfiles de la base de datos</h2>
@@ -29,7 +31,6 @@
                             </label>
                         @endforeach
                     </div>
-
                 {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
             </fieldset>
             {!! Form::close() !!}

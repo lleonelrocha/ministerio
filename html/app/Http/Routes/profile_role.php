@@ -34,7 +34,4 @@ Route::group(['prefix' => 'profile_role', 'middleware'=>'is_admin', 'roles'=> [3
         'uses' => 'ProfilesRolesController@destroy'
     ]);
 
-
-
-
 });
