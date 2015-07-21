@@ -18,13 +18,8 @@
                                 <select multiple="multiple" class="form-control">
                                         <option value="{{ $profile->id }}" name="{{ $profile->name }}">{{ $profile->name }}</option>
                                 </select>
-
                                 <br class="clearfix" />
-
-                                <div class="checkbox">
-
-
-                                </div>
+                                <div class="checkbox"></div>
 
                                 {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
                             </fieldset>

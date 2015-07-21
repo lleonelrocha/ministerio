@@ -2,8 +2,6 @@
 @section('body')
     @include('partials.menu')
     @include('partials.messages')
-
-    142536142536
     <div class="row">
         <div class="col-xs-12">
             <h2 >Perfiles de la base de datos</h2>
@@ -22,7 +20,6 @@
             {!! Form::close() !!}
         </div>
     </div>
-
     <br class="clearfix" />
 
     <div clas="row">
