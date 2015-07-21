@@ -17,7 +17,7 @@ class Est {
     {
             if(auth()->user()->estado != 0)
             {
-                return redirect('auth/login');
+                return redirect('auth/logout');
             }
 
             return $next($request);

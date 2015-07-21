@@ -23,8 +23,10 @@
 
                                 <div class="form-group">
                                     <label>Imagen</label>
-                                    {!! Form::text('image', null, ['class' => 'form-control']) !!}
+                                    {!! Form::file('image', null, ['class' => 'form-control']) !!}
                                 </div>
+
+
                                 {!! Form::hidden('user_id', (Auth::user()->id_user)) !!}
 
                                 {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
