@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use App\Http\Repositories\PostRepo;
 use App\Http\Requests\Post\PostCreateRequest;
 use App\Http\Requests\Post\PostEditRequest;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Auth;
 use App\Entities\Post;
@@ -18,10 +19,12 @@ class PostsController extends Controller {
 
     public function index()
     {
+
         $user_id=(Auth::user()->iduser);
         $posts = $this->postRepo->ListPost($user_id);
         return view('post.index', compact('posts'));
     }
+
 
     public function create()
     {

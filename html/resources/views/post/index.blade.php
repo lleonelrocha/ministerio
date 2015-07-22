@@ -2,10 +2,26 @@
 @section('body')
     @include('post.partials.menu')
     @include('partials.messages')
+
+    <div class="row">
+        <div class="col-xs-6">
+            {!! Form::open(['method' => 'GET']) !!}
+            <div class="input-group">
+                {!! Form::text('search', Request::get('search'), ['class' => 'form-control']) !!}
+                <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default">Buscar post</button>
+                </div>
+            </div>
+            {!! Form::close() !!}
+        </div>
+
+    </div>
+
+    <br class="clearfix" />
+
     <div class="row">
         <div class="col-xs-12">
             <div class="panel panel-default">
-
                 <div class="panel-body">
                     <h3>Tus posts</h3>
                     <br class="clearfix" />

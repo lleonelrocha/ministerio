@@ -9,6 +9,7 @@ use Illuminate\Routing\Route;
 use Illuminate\Http\Request;
 
 
+
 class UsersController extends Controller {
 
 	protected $userRepo;
@@ -23,8 +24,6 @@ class UsersController extends Controller {
 
 	public function index(Request $request)
 	{
-
-
 		$users = $this->userRepo->ListAndPaginate($request->get('search'), 10);
 		return view('admin.index', compact('users'));
 	}
