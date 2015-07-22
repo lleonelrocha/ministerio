@@ -5,7 +5,7 @@ use App\Http\Requests\Post\PostCreateRequest;
 use App\Http\Requests\Post\PostEditRequest;
 use Illuminate\Routing\Route;
 use Auth;
-
+use App\Entities\Post;
 
 class PostsController extends Controller {
 
@@ -58,5 +58,13 @@ class PostsController extends Controller {
         $post = $this->postRepo->find($id);
         $this->postRepo->delete($post);
         return redirect()->back()->with('msg_ok', 'Post borrado correctamente');
+    }
+
+    public function probar($id)
+    {
+        $post = $this->postRepo->find($id);
+        dd($post);
+
+        return 'probar';
     }
 }

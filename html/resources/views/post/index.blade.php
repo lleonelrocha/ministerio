@@ -30,6 +30,12 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            {!! $posts->appends(Request::only('search'))->render() !!}
+        </div>
+    </div>
+
 
 
 @endsection()

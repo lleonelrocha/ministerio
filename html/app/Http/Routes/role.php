@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => 'role'], function() {
+Route::group(['prefix' => 'role', 'middleware'=> 'est' ], function() {
 
     Route::get('/', [
           'as'=> 'role.index',

@@ -22,7 +22,8 @@ class PostRepo extends BaseRepo {
 
     public function ListPost($user_id)
     {
-        $qry = Post::with('user')->where('posts.user_id', '=', $user_id)->get();
+        $qry = Post::with('user')->where('posts.user_id', '=', $user_id)
+            ->paginate(10);
         return $qry;
     }
 

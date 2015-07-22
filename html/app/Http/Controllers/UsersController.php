@@ -6,8 +6,7 @@ use App\Http\Repositories\PostRepo;
 use App\Http\Requests\User\UserCreateRequest;
 use App\Http\Requests\User\UserEditRequest;
 use Illuminate\Routing\Route;
-use App\Http\Requests\Request;
-
+use Illuminate\Http\Request;
 
 
 class UsersController extends Controller {
@@ -22,11 +21,23 @@ class UsersController extends Controller {
         $this->postRepo = $postRepo;
 	}
 
-	public function index()
+	public function index(Request $request)
 	{
-		$users = $this->userRepo->ListAndPaginate();
+
+
+		$users = $this->userRepo->ListAndPaginate($request->get('search'), 10);
 		return view('admin.index', compact('users'));
 	}
+
+    /*public function index(Request $request)
+    {
+        $usuario = $this->usuarioRepo->ListAndPaginate(
+            $request->get('search'),
+            10
+        );
+        return view('usuarios.usuarios', compact('usuario'));
+    }
+    */
 
 
 	public function create()
@@ -55,9 +66,6 @@ class UsersController extends Controller {
 
 	public function update(UserEditRequest $request, Route $route)
 	{
-
-
-
 		$user = $this->userRepo->find($route->getParameter('id'));
         $datos = $request->only('first_name', 'last_Name', 'email', 'password', 'phone_number');
 

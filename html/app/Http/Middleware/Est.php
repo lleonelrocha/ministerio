@@ -17,7 +17,8 @@ class Est {
     {
             if(auth()->user()->estado != 0)
             {
-                return redirect('auth/logout');
+                return redirect('auth/login');
+                //return redirect()->back()->with('msg_ok', 'Usuario activado correctamente');
             }
 
             return $next($request);

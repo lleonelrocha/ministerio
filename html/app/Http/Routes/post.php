@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => 'posts', 'middleware'=>'is_admin','roles'=> [2]], function() {
+Route::group(['prefix' => 'posts', 'middleware'=> 'est', 'is_admin','roles'=> [2] ], function() {
 
     Route::get('/', [
         'as'=> 'posts.index',
@@ -35,6 +35,12 @@ Route::group(['prefix' => 'posts', 'middleware'=>'is_admin','roles'=> [2]], func
        'as' => 'posts.destroy',
         'uses' => 'PostsController@destroy'
 
+    ]);
+
+    Route::get('probar/{id}', [
+
+        'as'=>'posts.probar',
+        'uses'=> 'PostsController@probar'
     ]);
 
 
