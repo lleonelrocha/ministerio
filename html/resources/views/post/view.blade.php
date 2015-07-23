@@ -2,10 +2,7 @@
 @section('body')
     @include('post.partials.menu')
     @include('partials.messages')
-
-
     <br class="clearfix" />
-
     <div class="row">
         <div class="col-xs-12">
             <div class="panel panel-default">
@@ -13,7 +10,6 @@
                     <h3>Tus posts</h3>
 
                     <br class="clearfix" />
-
                         <div class="row">
                             <div class="col-xs-12 col-lg-12">
                                 <div class="panel panel-default">
@@ -26,7 +22,6 @@
                                 </div>
                             </div>
                         </div>
-
                     <br class="clearfix" />
 
                     <h3>Comentar</h3>
@@ -76,10 +71,8 @@
                              @endforeach()
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-
 @endsection()

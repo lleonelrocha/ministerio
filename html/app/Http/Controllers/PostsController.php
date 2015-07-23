@@ -75,7 +75,6 @@ class PostsController extends Controller {
     {
         $post = $this->postRepo->find($id);
         $comentarios = $this->comentarioRepo->ListComentario($id);
-
         return view('post.view', compact('post', 'comentarios'));
     }
 
