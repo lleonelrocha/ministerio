@@ -43,5 +43,16 @@ Route::group(['prefix' => 'posts', 'middleware'=> 'est', 'is_admin','roles'=> [2
         'uses'=> 'PostsController@probar'
     ]);
 
+    Route::get('view/{id}', [
+        'as' => 'posts.view',
+        'uses' => 'PostsController@view'
+
+    ]);
+
+    Route::post('comentarioStore', [
+        'as' => 'posts.comentarioStore',
+        'uses' => 'PostsController@comentarioStore'
+    ]);
+
 
 });

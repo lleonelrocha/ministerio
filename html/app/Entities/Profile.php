@@ -6,7 +6,6 @@ class Profile extends Entity {
     //table
     protected $table = 'profiles';
 
-
     protected $fillable = ['name'];
 
 	// Relaciones
@@ -14,7 +13,6 @@ class Profile extends Entity {
     {
         return $this->hasMany(User::getClass());
     }
-
 
     public function roles()
     {

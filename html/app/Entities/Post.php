@@ -25,5 +25,13 @@ class Post extends Entity implements AuthenticatableContract {
         return $this->belongsTo(User::getClass());
     }
 
+    public function comentario()
+    {
+        //uno a muchos
+        // un post tiene muchos comentarios
+        return $this->hasMany(Post::getClass());
+    }
+
+
 
 }

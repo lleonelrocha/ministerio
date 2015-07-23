@@ -1,25 +1,27 @@
 <?php
 namespace App\Http\Controllers;
 use App\Http\Repositories\PostRepo;
+use App\Http\Repositories\ComentarioRepo;
+use App\Http\Requests\Comentario\ComentarioCreateRequest;
 use App\Http\Requests\Post\PostCreateRequest;
 use App\Http\Requests\Post\PostEditRequest;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Auth;
-use App\Entities\Post;
 
 class PostsController extends Controller {
 
     protected $postRepo;
+    protected $comentarioRepo;
 
-    public function __construct(PostRepo $postRepo )
+    public function __construct(PostRepo $postRepo, ComentarioRepo $comentarioRepo )
     {
         $this->postRepo = $postRepo;
+        $this->comentarioRepo = $comentarioRepo;
     }
 
     public function index()
     {
-
         $user_id=(Auth::user()->iduser);
         $posts = $this->postRepo->ListPost($user_id);
         return view('post.index', compact('posts'));
@@ -53,7 +55,6 @@ class PostsController extends Controller {
         $datos = $request->only('descripcion', 'image', 'titulo');
         $this->postRepo->edit($post, $datos);
         return redirect()->back()->with('msg_ok', 'Post editado correctamente');
-
     }
 
     public function destroy($id)
@@ -67,7 +68,22 @@ class PostsController extends Controller {
     {
         $post = $this->postRepo->find($id);
         dd($post);
-
         return 'probar';
+    }
+
+    public function view($id)
+    {
+        $post = $this->postRepo->find($id);
+        $comentarios = $this->comentarioRepo->ListComentario($id);
+
+        return view('post.view', compact('post', 'comentarios'));
+    }
+
+
+    public function comentarioStore(ComentarioCreateRequest $request)
+    {
+        $datos = $request->only('nombre', 'apellido', 'texto', 'post_id');
+        $this->comentarioRepo->create($datos);
+        return redirect()->back()->with('msg_ok', 'Comentario creado correctamente');
     }
 }

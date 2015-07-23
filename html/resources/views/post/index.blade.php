@@ -29,8 +29,10 @@
                             <div class="row">
                                 <div class="col-xs-12 col-lg-12">
                                     <div class="panel panel-default">
-                                        <div class="panel-heading">{{ $post->titulo }}
-                                            <a href="{{ route('posts.edit', $post->id)}}" class="glyphicon glyphicon-pencil" ></a>
+                                        <div class="panel-heading">
+
+                                            <a href="{{ route('posts.view', $post->id) }}"> {{ $post->titulo }}</a>
+                                            <a href="{{ route('posts.edit', $post->id)  }}" class="glyphicon glyphicon-pencil" ></a>
                                          </div>
                                         <div class="panel-body"> {{ $post->descripcion }}
                                             <a href="{{ route('posts.destroy', $post->id)}}" class="glyphicon glyphicon-remove" ></a>
@@ -45,6 +47,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="row">
         <div class="col-xs-12 text-center">
