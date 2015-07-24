@@ -2,7 +2,7 @@
 @section('body')
 
     <script>
-        function realizaProceso(valorCaja1, valorCaja2){
+       /* function realizaProceso(valorCaja1, valorCaja2){
 
             var parametros = {
                 "valorCaja1" : valorCaja1,
@@ -25,7 +25,8 @@
                     $("#resultado").html(data.resultado + " "+ data.sms+" "+dhtml);
                 }
             });
-        }
+
+            */
     </script>
 
     <br class="clearfix" />
@@ -39,17 +40,19 @@
                         <div class="row">
                             <div class="col-xs-12 col-lg-12">
                                 <div class="panel panel-default">
+
+                                    {!! Form::open(['route' => 'prueba.store', 'method' => 'POST']) !!}
+
                                     Introduce valor 1
                                     <input type="text" name="caja_texto" id="valor1" value="0"/>
-
-
                                     Introduce valor 2
                                     <input type="text" name="caja_texto" id="valor2" value="0"/>
-
                                     Realiza suma
                                     <input type="button" href="javascript:;" onclick="realizaProceso($('#valor1').val(), $('#valor2').val());return false;" value="Calcula"/>
-                                    <br/>
-                                    Resultado: <span id="resultado">0</span>
+
+                                    {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
+
+                                     Resultado: <span id="resultado">0</span>
                                 </div>
                             </div>
                         </div>
