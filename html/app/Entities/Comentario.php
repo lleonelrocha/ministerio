@@ -11,7 +11,12 @@ class Comentario extends Entity{
     public function post()
     {
 
+            //Un comentario pertenece solo a un post
         return $this->belongsTo(Post::getClass());
+
+            // relacion uno a uno
+        //return $this->hasOne('tabla');
+
     }
 
 }
