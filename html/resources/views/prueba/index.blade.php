@@ -1,40 +1,12 @@
 @extends('app')
 @section('body')
-
-    <script>
-       /* function realizaProceso(valorCaja1, valorCaja2){
-
-            var parametros = {
-                "valorCaja1" : valorCaja1,
-                "valorCaja2" : valorCaja2
-            };
-            $.ajax({
-                data:  parametros,
-                url:   'gethint',
-                type:  'post',
-                beforeSend: function () {
-                    $("#resultado").html("Procesando, espere por favor...");
-                },
-                success:  function (data) {
-
-                    var dhtml="";
-                    for (datas in data.datos) {
-                        dhtml+=' <p> Nombre: '+data.datos[datas].login+'</p>';
-                    };
-
-                    $("#resultado").html(data.resultado + " "+ data.sms+" "+dhtml);
-                }
-            });
-
-            */
-    </script>
+    @include('partials.messages')
 
     <br class="clearfix" />
     <div class="row">
         <div class="col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3>Tus posts</h3>
 
                     <br class="clearfix" />
                         <div class="row">
@@ -43,22 +15,58 @@
 
                                     {!! Form::open(['route' => 'prueba.store', 'method' => 'POST']) !!}
 
-                                    Introduce valor 1
-                                    <input type="text" name="caja_texto" id="valor1" value="0"/>
-                                    Introduce valor 2
-                                    <input type="text" name="caja_texto" id="valor2" value="0"/>
-                                    Realiza suma
-                                    <input type="button" href="javascript:;" onclick="realizaProceso($('#valor1').val(), $('#valor2').val());return false;" value="Calcula"/>
+                                        <div class="form-group">
+                                            <label>Nombre</label>
+                                            {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
+                                        </div>
 
-                                    {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
+                                        <div class="form-group">
+                                            <label>Apellido</label>
+                                            {!! Form::text('apellido',null, [ 'class' => 'form-control' ]) !!}
+                                        </div>
 
-                                     Resultado: <span id="resultado">0</span>
+                                        <div class="form-group">
+                                            <label>Web</label>
+                                            {!! Form::text('web',null, [ 'class' => 'form-control' ]) !!}
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            {!! Form::text('email',null, [ 'class' => 'form-control' ]) !!}
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            {!! Form::password('password', [ 'class' => 'form-control' ]) !!}
+                                        </div>
+
+
+                                        {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
+
+                                    {!! Form::close() !!}
+
                                 </div>
                             </div>
                         </div>
-
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="getRequestData"></div>
+
+
+    <script type="text/javascript">
+        /*   $(document).ready(function(){
+                $('#getRequest').click(function(){
+                    $.get('getRequest', function(data){
+                       $('#getRequestData').append(data);
+                        console.log(data);
+                    });
+                });
+           }) ;
+
+           */
+    </script>
+
 @endsection()

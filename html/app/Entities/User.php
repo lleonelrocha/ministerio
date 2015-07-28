@@ -19,16 +19,23 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
 	protected $hidden = ['password', 'remember_token'];
 
     // Relaciones
+    // Un usuario tiene solo un perfil
     public function profile()
     {
         return $this->belongsTo(Profile::getClass());
     }
 
+    // Un usuario tiene muchos post
     public function post()
     {
         return $this->hasMany(Post::getClass());
     }
 
+    // Un usuario puede pedir muchos libros
+    public function libro()
+    {
+        return $this->belongsToMany(Profile::getClass(), 'libros_users');
+    }
 
     // Scopes
     public function scopeFirst_name($query, $search)
