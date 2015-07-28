@@ -7,4 +7,9 @@ Route::group([ 'prefix'=>'libro' ], function(){
 
     ]);
 
+    Route::get('prueba', [
+        'as' => 'libro.prueba',
+        'uses' => 'LibrosController@prueba'
+    ]);
+
 });

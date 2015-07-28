@@ -22,9 +22,16 @@ class LibrosController extends Controller{
 
     public function index()
     {
-        $libros = Libro::with('user')->get();
+        $libros = Libro::with('user')
+        ->orderBy('id', 'desc')
+        ->get();
         //dd($libros);
         return view('libro.index', compact('libros'));
+    }
+
+    public function prueba()
+    {
+        return view('libro.prueba');
     }
 
 }
