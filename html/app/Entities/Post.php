@@ -32,6 +32,20 @@ class Post extends Entity implements AuthenticatableContract {
         return $this->hasMany(Post::getClass());
     }
 
+    //Scoops
+    public function scopeDescripcion($query, $search)
+    {
+        if(trim($search) != '')
+            $query->orWhere('descripcion', 'like', "%$search%");
+
+    }
+
+    //Accesors
+
+    public function getFulldateAttribute()
+    {
+        return $this->created_at->format('d-m-Y');
+    }
 
 
 }

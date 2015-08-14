@@ -1,6 +1,6 @@
 @extends('app')
 @include('partials.menu')
-@section('content')
+@section('body')
 
 <div class="container">
 	<div class="row">
@@ -15,4 +15,4 @@
 		</div>
 	</div>
 </div>
-@endsection
+@endsection()

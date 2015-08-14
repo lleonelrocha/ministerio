@@ -12,7 +12,7 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
 
 	protected $table = 'users';
 
-	protected $fillable = ['id','first_name', 'last_name', 'email', 'phone_number', 'profile_id'];
+	protected $fillable = ['id','first_name', 'last_name', 'email', 'phone_number', 'profile_id', 'estado', 'sexo_id'];
 
     protected $name;
 
@@ -34,7 +34,13 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
     // Un usuario puede pedir muchos libros
     public function libro()
     {
-        return $this->belongsToMany(Profile::getClass(), 'libros_users');
+        return $this->belongsToMany(Libro::getClass(), 'libros_users');
+    }
+
+    //Un usuario tiene un solo sexo
+    public function sexo()
+    {
+        return $this->belongsTo(Sexo::getClass());
     }
 
     // Scopes
@@ -42,6 +48,30 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
     {
         if (trim($search) != '')
             $query->orWhere('first_name', 'like', "%$search%");
+
+
+
+    }
+    public function scopeEmail($query, $search)
+    {
+        if(trim($search) != '')
+            $query->orWhere('email', 'like', "%$search%");
+
+
+    }
+
+    public function scopeLast_name($query, $search)
+    {
+        if(trim($search) != '')
+            $query->orWhere('last_name', 'like', "%$search%");
+
+    }
+
+    public function scopeSexo($query, $search)
+    {
+        if(trim($search) != '')
+            $query->orWhere('sexo', 'like', "%$search%");
+
     }
 
     // Mutators
@@ -67,4 +97,15 @@ class User extends Entity implements AuthenticatableContract, CanResetPasswordCo
         return $this->id;
     }
 
+    public function getDateAttribute()
+    {
+       return $this->created_at->format('d-m-Y');
+    }
+
+
+    /*$ticket = Ticket::findOrFail(1);
+    $date = new \Carbon\Carbon($ticket->created_at);
+    echo $date->format('d-m-Y');
+    cho $ticket->created_at->format('d-m-Y');
+    */
 }

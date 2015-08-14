@@ -36,9 +36,12 @@
                             <td>{{ $perfil->id }}  </td>
                             <td>{{ $perfil->name }}
                                 <td>
-                                  @foreach($perfil->roles as $role)
-                                     {{ $role->name }}
-                                  @endforeach
+                                    @if( count($perfil->roles) == 0 )
+                                        Sin roles asignados
+                                    @endif()
+                                      @foreach($perfil->roles as $role)
+                                         {{ $role->name }}
+                                      @endforeach
                                 </td>
                             <td><a href="{{ route('profile_role.edit',    [$perfil->id]) }}">Update </a></td>
                             <td><a href="{{ route('profile_role.destroy', [$perfil->id]) }}">Destroy </a></td>

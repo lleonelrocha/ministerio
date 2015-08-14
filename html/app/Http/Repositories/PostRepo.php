@@ -20,9 +20,11 @@ class PostRepo extends BaseRepo {
         return new Post;
     }
 
-    public function ListPost($user_id)
+    public function ListPost($user_id,  $search = null)
     {
-        $qry = Post::with('user')->where('posts.user_id', '=', $user_id)
+        $qry = Post::with('user')
+            ->where('posts.user_id', '=', $user_id)
+            ->descripcion($search)
             ->paginate(10);
         return $qry;
     }

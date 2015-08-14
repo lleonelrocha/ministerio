@@ -6,10 +6,17 @@ use Illuminate\Routing\Route;
 
 class HomeController extends Controller {
 
+    //public $vista ;
+    //public $data;
+
+    public function __construct(){
+        //$this->vista = 'home';
+
+    }
+
 	public function index()
     {
-
-         return view('home');
+     return view('home');
     }
 
     /*public function view()

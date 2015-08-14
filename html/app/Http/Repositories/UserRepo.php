@@ -27,10 +27,12 @@ class UserRepo extends BaseRepo {
       */
 
         //$user = User::find(2);
-        $qry= User::with('profile')
-            ->first_name($search)
-            ->paginate($paginate);
-            return $qry;
+        $qry = User::with('profile')
+             ->first_name($search)
+             ->email($search)
+             ->last_name($search)
+             ->paginate($paginate);
+             return $qry;
             //->select('first_name')
             //->first_name($search)
             //->paginate($paginate)->get();

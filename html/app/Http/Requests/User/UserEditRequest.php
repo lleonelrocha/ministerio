@@ -36,7 +36,10 @@ class UserEditRequest extends Request {
             'password' => 'max:255',
             'phone_number' => 'max:255',
             //'profile_id'=>'required',
-            'imageUrl' => 'max:255'
+            'imageUrl' => 'max:255',
+            'estado' => 'required',
+            'sexo_id' => 'required',
+
 		];
 	}
 

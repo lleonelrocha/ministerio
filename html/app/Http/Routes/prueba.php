@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => 'prueba', 'middleware'=>'est' ], function() {
+Route::group(['prefix' => 'prueba' ], function() {
 
     Route::get('/', [
         'as'   => 'prueba.index',
@@ -17,9 +17,32 @@ Route::group(['prefix' => 'prueba', 'middleware'=>'est' ], function() {
         'uses' => 'PruebaController@create'
     ]);
 
-    Route::get('edit', [
+    Route::post('edit', [
         'as'    => 'prueba.edit',
         'uses'  => 'PruebaController@edit'
     ]);
+
+    Route::get('usuario', [
+        'as'   => 'prueba.usuario',
+        'uses' => 'PruebaController@usuario'
+    ]);
+
+    Route::get('pelicula', [
+        'as'   => 'prueba.pelicula',
+        'uses' => 'PruebaController@peliculas'
+    ]);
+
+    Route::get('hora', [
+        'as' => 'prueba.hora',
+        'uses' => 'PruebaController@hora'
+
+    ]);
+    Route::get('traerPelicula/{id}', [
+        'as' => 'prueba.traerPelicula',
+        'uses' => 'PruebaController@traerPelicula'
+
+    ]);
+
+
 
 });

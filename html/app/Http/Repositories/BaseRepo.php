@@ -31,11 +31,9 @@ abstract class BaseRepo {
         return $model;
     }
 
-
     public function delete($model)
     {
         return $model->delete();
     }
-
 
 }

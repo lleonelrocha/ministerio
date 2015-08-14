@@ -13,11 +13,23 @@ class ProfilesRolesController extends Controller{
     public function index()
     {
         $perfiles = Profile::with('roles')->get();
+        /*$perfiles = Profile::join('profiles_roles', 'profiles.id', '=', 'profiles_roles.profile_id')
+            ->join('roles', 'roles.id', '=', 'profiles_roles.role_id')
+            ->select('profiles.name', 'roles.name')
+            ->toSql();
+        */
+        /*$libros = Libro::join('libros_users', 'libros.id', '=', 'libros_users.libro_id')
+            ->join('users', 'users.id', '=', 'libros_users.user_id')
+            ->select('users.first_name', 'libros.nombre')
+            ->whereIn('users.id', [1, 2, 3])
+            ->get();
+        */
         //dd($perfiles);
         return view ('profile.profile_role.index', compact('perfiles', $perfiles));
     }
 
     public function create()
+
     {
         $profiles=Profile::All();
         $roles=Role::ALl();
@@ -60,8 +72,7 @@ class ProfilesRolesController extends Controller{
     /*public function store(Request $request)
     {
 
-
-         //dd($request->all());
+        //dd($request->all());
         $profiles->roles()->sync(array(1, 2, 3));
         $profiles= Profile::find($request->input('profile_id'));
         $profiles->roles()->sync(array($request->all()));

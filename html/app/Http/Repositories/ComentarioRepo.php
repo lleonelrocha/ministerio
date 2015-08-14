@@ -14,7 +14,6 @@ class ComentarioRepo extends BaseRepo{
         return new Comentario;
     }
 
-
     public function ListComentario($post_id)
     {
         //$posts = Category::find(1)->posts()->orderBy('created_at', 'desc')->where('hidden', '=', 0)->where('id', '=', $id)->get();

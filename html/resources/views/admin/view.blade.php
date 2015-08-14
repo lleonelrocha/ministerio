@@ -11,6 +11,7 @@
                                   <legend>Datos de {{ $user->fullname }}</legend>
                                   <address>
                                       <strong>Telefono</strong>: {{ $user->phone_number }}<br>
+                                      <strong>Cuenta creada</strong>: {{ $user->date }}<br>
                                   </address>
                                   <address>
                                       <strong>Email</strong><br>

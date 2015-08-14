@@ -1,7 +1,7 @@
 <?php
 
 
-Route::group(['prefix' => 'users', 'middleware' => 'is_admin', 'roles' => [3]],  function() {
+Route::group(['prefix' => 'users', 'middleware' => 'is_admin', 'roles' => [1,3]],  function() {
 
     Route::get('/', [
         'as'=> 'users.index',
@@ -49,6 +49,7 @@ Route::group(['prefix' => 'users', 'middleware' => 'is_admin', 'roles' => [3]], 
         'uses' => 'UsersController@active'
 
     ]);
+
 
 
 
